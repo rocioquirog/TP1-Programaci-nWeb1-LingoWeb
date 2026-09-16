@@ -1,0 +1,22 @@
+IMAGOTIPO
+<a href="https://ibb.co/HfrN3mXP"><img src="https://i.ibb.co/NdL1bw7N/LINGOWEB.png" alt="LINGOWEB" border="0"></a>
+
+LINGOWEB - PALETA DE COLORES
+
+Fondo crema:
+#FFF8E7
+
+Amarillo:
+#FFD45A
+
+Naranja:
+#F47B3A
+
+Rojo:
+#E94B4B
+
+Texto:
+#000000
+
+Tipografía:
+Trebuchet MS
