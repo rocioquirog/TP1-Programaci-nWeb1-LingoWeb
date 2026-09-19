@@ -1,0 +1,119 @@
+/* PERFIL */
+
+.contenido-principal {
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.perfil {
+    background-color: white;
+    padding: 2rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.avatar {
+    background-color: #F47B3A;
+    color: white;
+
+    width: 5rem;
+    height: 5rem;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.correo-usuario {
+    color: #F47B3A;
+}
+
+.informacion-personal,
+.cambiar-contrasena,
+.idiomas,
+.targetas {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.lista-informacion {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-informacion li {
+    padding: 0.5rem;
+}
+
+.cambiar-contrasena form,
+.idiomas form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cambiar-contrasena input {
+    padding: 0.8rem;
+    border: 0.1rem solid #E94B4B;
+    border-radius: 0.7rem;
+}
+
+.idiomas select {
+    width: 50%;
+    padding: 0.7rem;
+    border: 0.1rem solid #E94B4B;
+    border-radius: 0.7rem;
+}
+
+.targetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.targetas h2 {
+    width: 100%;
+}
+
+.targeta-logro {
+    background-color: #FFF8E7;
+    border: 0.1rem solid #FFD45A;
+    padding: 1rem;
+    border-radius: 0.7rem;
+    flex: 1;
+}
+
+.acciones {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 40rem) {
+
+    .perfil {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .targeta-logro {
+        flex: 100%;
+    }
+
+    .acciones {
+        flex-direction: column;
+    }
+
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="perfil.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <title>Perfil | LingoWeb</title>
+</head>
+<body>
+    <!-- Barra de navegación -->
+     <header class="barra-navegacion">
+
+      <h1>  <a href="../index.html" class="logo">
+            <span class="logo-icono">L</span>
+            <span class="logo-texto">LingoWeb</span>
+            
+        </a></h1>
+        
+        
+        <nav >
+
+            <ul class="menu">
+                <li>
+                    <a href="#">Perfil</a>
+                </li>
+                <li>
+                    <a href="../paginaRanking/ranking.html">Ranking</a>
+                </li>
+            </ul>
+        </nav>
+     </header>
+  
+    <!--  CONTENIDO DEL PERFIL -->
+    <main class="contenido-principal">
+        <section class="perfil">
+            <div class="avatar">
+                FF
+            </div>
+        <div class="datos-principales">
+
+            <h2>Facundo Ferreira</h2>
+            <p class="correo-usuario">
+                @facunduferreira_web
+            </p>
+            <p class="descripcion-usuario">
+                Miembro desde Marzo de 2026
+            </p>
+        </div>
+        </section>
+
+        <!--  INFORMACION PERSONAL  -->
+          <section class="informacion-personal">
+            <h2>Información Personal</h2>
+            <ul class="lista-informacion">
+                <li><strong>Nombre Completo:</strong> Facundo Ferreira Rodriges</li>
+                <li><strong>Nombre de Usuario:</strong> @facunduferreira_web </li>
+                <li><strong>Email institucional:</strong>facundo.ferreira@alumnos.unlam.edu.ar</li>
+                <li><strong>Fecha de Nacimiento:</strong> 15/03/1990</li>
+            </ul>
+        </section>
+
+        <!---CAMBIAR CONTRASEÑA--->
+        <section class="cambiar-contrasena">
+            <h2>Cambiar Contraseña</h2>
+            <form action="#">
+                <label for="contrasena-actual">Contraseña Actual:</label>
+                <input type="password" id="contrasena-actual" name="contrasena-actual" required>
+
+                <label for="nueva-contrasena">Nueva Contraseña:</label>
+                <input type="password" id="nueva-contrasena" name="nueva-contrasena" required>
+
+                <label for="confirmar-contrasena">Confirmar Nueva Contraseña:</label>
+                <input type="password" id="confirmar-contrasena" name="confirmar-contrasena" required>
+
+            </form>
+        </section>
+
+         <!----IDIOMAS---->
+        <section class="idiomas">
+            <h2>Idiomas de la interfaz</h2>
+            <form action="#">
+                <label for="idioma">
+                    Idioma principal
+                </label>
+                <select id="idioma" name="idioma">
+
+                    <option value="espanol">
+                        Español
+                    </option>
+
+                    <option value="ingles">
+                        English
+                    </option>
+
+                </select>
+            </form>
+        </section>
+           
+        <!---LOGROS---->
+        <section class="targetas">
+            <h2>Mis Logros</h2> 
+            <article class="targeta-logro">
+                <h3>Primer paso</h3>
+                 <div class="icono-logro">
+                        🏆
+                    </div>
+                <p>Completaste tu primera lección.</p>
+            </article>
+            <article class="targeta-logro">
+                <h3>Racha de 5 días</h3>
+                <div class="icono-logro">
+                        🔥
+                    </div>
+                <p>Aprendiste durante 5 días seguidos.</p>
+            </article>
+            <article class="targeta-logro">
+                <h3>350 XP</h3>
+                <div class="icono-logro">
+                        💪
+                    </div>
+                <p>Experiencia acumulada.</p> 
+            </article>
+        </section>     
+          <!-- BOTONES -->
+        <section class="acciones">
+
+            <button type="submit" class="boton boton-principal">
+                Guardar cambios
+            </button>
+
+            <a href="../paginas/acceso/login.html" class="boton boton-secundario">
+                Cerrar sesión
+            </a>
+
+        </section>
+
+              
+    </main>
+     <!-- PIE DE PÁGINA -->
+    <footer>
+
+        <p>
+            © 2026 LingoWeb - Plataforma de aprendizaje de idiomas
+        </p>
+
+    </footer>
+
+
+</body>
+</html>

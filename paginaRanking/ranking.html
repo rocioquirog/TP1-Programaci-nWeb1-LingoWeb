@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking | LingoWeb</title>
+    <link rel="stylesheet" href="ranking.css">
+    <link rel="stylesheet" href="../css/general.css">
+</head>
+<body>
+     <!-- Barra de navegación -->
+    <header class="barra-navegacion">
+        <h1>  <a href="../index.html" class="logo">
+               <img src="../identidad/SINBOLOLINGOWEB.png" alt="imagotipo de LingoWeb">
+                <span class="logo-texto">LingoWeb</span>
+        </a></h1>
+        <nav >
+             <ul class="menu">
+                <li>
+                    <a href="../paginaPerfil/perfil.html">Perfil</a>
+                </li>
+                <li>
+                    <a href="#">Ranking</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!--  CONTENIDO DEL RANKING -->
+    <main class="contenido-ranking"> 
+        <section class="encabezado-ranking"> 
+            <h2>Tabla de Ranking</h2>
+
+            <p>Liga de Bronce</p>
+        </section>
+        <section class="selector-liga"> 
+            
+            <label for="liga">Seleccionar Liga:</label>
+            <select id="liga" name="liga">
+                <option value="bronce">Liga de Bronce</option>
+                <option value="plata">Liga de Plata</option>
+                <option value="oro">Liga de Oro</option>
+            </select>
+        </section>
+          <!-- INFORMACIÓN -->
+        <section class="mensaje-ranking">
+
+            <h3>¡Seguí aprendiendo!</h3>
+            <p>Los 5 primeros ascienden a la Liga de Plata esta semana.</p>
+        </section>
+
+        <!--  TABLA DE RANKING  -->
+         <section class="tabla-ranking">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Puesto</th>
+                        <th>Estudiante</th>
+                        <th>XP semanal</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> 🥇1</td>
+                        <td>@facunduferreira_web</td>
+                        <td>720XP</td>
+                        <td>Zona de Ascenso</td>
+                    </tr>
+                    <tr>
+                        <td> 🥈2</td>
+                        <td>@homerosimpson</td>
+                        <td>515XP</td>
+                        <td>Zona de Ascenso</td>
+                    </tr>
+                    <tr>
+                        <td> 🥉3</td>
+                        <td>@lionelmessi</td>
+                        <td>300XP</td>
+                        <td>Fuera de ascenso</td>
+                    </tr>
+                </tbody>
+            </table>
+         </section>
+        
+    </main>
+    
+
+             <footer>
+             <p>   © 2026 LingoWeb - Plataforma de aprendizaje de idiomas</p>
+             </footer>
+</body>
+</html>
