@@ -1,0 +1,117 @@
+.contenido-ranking {
+    width: 95%;
+    margin: 2rem auto;
+}
+
+.encabezado-ranking {
+   
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.08);
+}
+
+.trofeo {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    background-color: #FFD45A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+.encabezado-ranking p{
+    color: #F47B3A;
+    font-weight: bold;
+}
+
+.selector-liga,
+.tabla-ranking {
+    background-color: white;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;  
+}
+.mensaje-ranking{
+    background-color: #FFD45A;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem; 
+}
+.columna-estudiante{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.avatar-pequeño {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #F47B3A;
+    color: white;
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    
+}
+.columna-XP{
+    color: #F47B3A;
+    font-weight: bold;
+
+}
+.columna-ascenso{
+       color:#E94B4B;
+    font-weight: bold; 
+}
+
+.selector-liga select {
+    padding: 0.7rem;
+    border: 0.1rem solid #E94B4B;
+    border-radius: 0.7rem;
+ 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+th,
+td {
+    padding: 0.7rem 0.3rem;
+    text-align: center;
+    border-bottom: 0.1rem solid #FFD45A;
+}
+th {
+    background-color: #F47B3A;
+    color: white;
+}
+tbody tr:hover {
+    background-color: #FFF8E7;
+}
+.usuario-actual{
+background-color: #fff0b8;
+font-weight: bold;
+}
+
+
+
+@media (min-width: 40rem) {
+    .contenido-ranking {
+        width: 80%;
+    }
+    table {
+        font-size: 1rem;
+    }
+    th,
+    td {
+        padding: 1rem;
+    }
+}
