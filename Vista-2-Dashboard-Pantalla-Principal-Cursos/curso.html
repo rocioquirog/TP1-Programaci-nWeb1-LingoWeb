@@ -5,16 +5,30 @@
     <link rel="stylesheet" href="vista2.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
+    <link rel="stylesheet" href="../barra-de-navegación-css/general.css">
+    
     <title>Dashboard</title>
 </head>
 <body>
-    <header> 
-        <h2> LingoWeb |</h2>
-        <h2><a href="dashboard.html">Cursos</a></h2>
-        <h2><a href="perfil.html">Perfil</a></h2>
-        <h2><a href="ranking.html"> Ranking </a></h2>
-        <h2> | 🔥 5 dias |</h2>
-        <h2> ⚡ 350 XP</h2>
+    <header class="barra-navegacion"> 
+        <a href="../index.html" class="logo">
+        <img src="../identidad/SINBOLOLINGOWEB.png" alt="logo-tipo">
+        <span class="logo-texto">LingoWeb</span>
+        </a>
+        <h2> Vista de Cursos </h2>
+        <nav>
+            <ul class="menu">
+                <li><a href ="../Vista-2-Dashboard-Pantalla-Principal-Cursos/curso.html" class="active"> Cursos</a></li>
+                <li><a href="../Perfil/perfil.html">Perfil</a></li>
+                <li><a href="../Ranking/ranking.html">Ranking</a></li>
+            </ul>
+        </nav>
+        
+        <ul class="resumen">
+            <li>🔥 7 días</li>
+            <li>⚡ 777 XP</li>
+        </ul>
+
     </header>
     <h1> Mis Cursos de Idiomas </h1>
     
@@ -30,14 +44,14 @@
         <h2> <span class="fi fi-de"></span> Aleman desde Español </h2>
         <h3> Progreso: 12% </h3>
         <h3> Nivel: Principiante (A1)</h3>
-        <h2 id="boton"> <button>Continuar</button></h2>
+        <h2 id="boton"> <a href="../Vista-2-Dashboard-Pantalla-Principal-Cursos/curso.html">Continuar</a></h2>
         </section>
 
          <section class="chino">
         <h2> <span class="fi fi-cn"></span>  Chino desde Español </h2>
         <h3> Progreso: 0% </h3>
         <h3> Nivel: Inicial (HSK)</h3>
-        <h2 id="boton"><button>Empezar</button> </h2>
+        <h2 id="boton"><a href="../Vista-2-Dashboard-Pantalla-Principal-Cursos/curso.html">Empezar</a> </h2>
         </section>
 
          <section class="estadistica">
