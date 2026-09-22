@@ -4,31 +4,45 @@
         <meta charset = "UTF-8">
         <link rel="stylesheet" href="vista3.css">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
+        <link rel="stylesheet" href="../barra-de-navegación-css/general.css">
         <title>Unidades y Lecciones</title>
     </head>
     <body>
-    <header> 
-        <h2> LingoWeb |</h2>
-        <h2>Curso: Inglés desde Español</h2>
-        <h2><a href="../Vista-2-Dashboard-Pantalla-Principal-Cursos/curso.html">Volver a Cursos</a></h2>
+  
+    <header class="barra-navegacion"> 
+        <a href="../index.html" class="logo">
+        <img src="../identidad/SINBOLOLINGOWEB.png" alt="logo-tipo">
+        <span class="logo-texto">LingoWeb</span>
+        </a>
+        <h2> Curso: Inglés desde Español </h2>
+        <nav>
+            <ul class="menu">
+                <li><a href ="../Vista-2-Dashboard-Pantalla-Principal-Cursos/curso.html" class="active"> Cursos</a></li>
+                <li><a href="../Vista-2-Dashboard-Pantalla-Principal-Cursos/curso.html">Volver a Cursos</a></li>
+            </ul>
+        </nav>
+
     </header>
     <h1> Unidad 1: Introducción y Saludos</h1>
     <main>
         <section class="l1">
             <h2>🟢Lección 1</h2>
             <h2 class="negrita">Frases Básicas</h2>
-            <h2>Estado: Completado</h2>
+            <h2 id="boton">Estado: Completado</h2>
+            <h2> <a href="../Vista-3-Mapa-de-Unidades-Lecciones/mapa.html" class="inactive">No Disponible</a> </h2>
         </section>
         <section class="l2">
             <h2>🟡Lección 2</h2>
             <h2 class="negrita">Presentaciones</h2>
-            <h2>Estado: En Curso</h2>
-            <h2 id="boton"><a href="vistaLeccionInteractivaIngles.html">Iniciar</a></h2>
+            <h2 id="boton">Estado: En Curso</h2>
+            <h2 ><a href="vistaLeccionInteractivaIngles.html" class="active">Iniciar</a></h2>
         </section>
         <section class="l3">
             <h2>🔒Lección 3</h2>
             <h2 class="negrita">Vocabulario de Familia</h2>
-            <h2>Estado: Bloqueado</h2>
+            <h2 id="boton">Estado: Bloqueado</h2>
+            <h2> <a href="../Vista-3-Mapa-de-Unidades-Lecciones/mapa.html" class="inactive">No Disponible</a> </h2>
         </section>
     </main>
         

@@ -45,14 +45,7 @@ text-decoration: none;
 text-align:center;
 }
 
-#boton button{
-    display: flex;
-    text-align: center;
-    color:black;
-    text-decoration: none;
-    text-align:center;
-   background-color: #FFF8E7;
-}
+
 .ingles{
     
     width:30%;
