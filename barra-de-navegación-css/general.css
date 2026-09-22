@@ -47,7 +47,9 @@ main{
 
 .menu {
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -120,4 +122,17 @@ footer {
         width: auto;
     }
 }
-
+@media (max-width:25rem){
+    .logo-texto{
+        font-size: 2rem;
+    }
+    .logo img{
+        width: 2.5rem;
+    }
+    .menu{
+        gap:0.3rem;
+    }
+    .menu a{
+        padding: 0.4rem 0.6rem;
+    }
+}
