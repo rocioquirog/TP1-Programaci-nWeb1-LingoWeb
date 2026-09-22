@@ -2,10 +2,11 @@
     box-sizing: border-box;
 }
 body {
+    width: 80%;
     font-family: "Trebuchet MS", sans-serif;
     background-color: #FFF8E7;
     color: #000000;
-    margin: 0;
+    margin: auto;
     padding: 0;
 }
 
@@ -37,7 +38,7 @@ a:hover {
 
 img{
     display: block;
-    width: 50%;  
+    width: 60%;  
     margin: auto;
 }
 
@@ -45,13 +46,27 @@ section{
     text-align: center;
 }
 
-@media (max-width: 40rem) {
+/*CELULAR*/
+@media (max-width: 47rem) {
     header {
         margin: 3%;
     }
 
+    body{
+        width: 75%;
+    }
+
     img {
-        margin-top: 15%;
-        width: 80%;
+        margin-top: 30%;
+        width: 85%;
+    }
+}
+
+/*TABLET*/
+@media (min-width: 48em) and (max-width: 59em) {
+    img{
+        width: 70%;
+        margin-top: 20%;
+        margin-bottom: 10%;
     }
 }

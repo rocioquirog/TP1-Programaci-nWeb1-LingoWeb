@@ -67,12 +67,28 @@ a{
     margin-top: 2%;
 }
 
-@media (max-width: 40rem) {
+/*CELULAR*/
+@media (max-width: 47rem) {
     header img {
         width: 60%;
     }
 
     form {
         width: 70%;
+    }
+
+    a{
+        margin-bottom: 2%;
+    }
+}
+
+/*TABLET*/
+@media (min-width: 48em) and (max-width: 59em) {
+    header img{
+        width: 50%;
+    }
+
+    form{
+        width: 60%;
     }
 }
