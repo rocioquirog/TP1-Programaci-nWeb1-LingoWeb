@@ -77,5 +77,5 @@ main{
    }
 
 
-.menu a.active, main a.active{ padding:0.5rem; background-color: #FFD45A;color; color:black;}
+.menu a.active, main a.active{ padding:0.5rem; background-color: #FFD45A; color:black;}
 main a.inactive{ padding:0.5rem; background-color:#FFD45A; color:black; }

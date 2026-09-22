@@ -10,6 +10,11 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main{
+    flex: 1;
 }
 
 .barra-navegacion {
@@ -82,7 +87,7 @@ color: #b73413;
 }
 
 .boton:hover{
-    box-shadow: 0 0.3rem 0.5rem rgb(0, 0,0,0.3);
+    box-shadow: 0 0.3rem 0.5rem rgb(0,0,0,0.3);
     transform: translateY(-0.1rem);
 }
 
@@ -115,6 +120,4 @@ footer {
         width: auto;
     }
 }
-
-
 
