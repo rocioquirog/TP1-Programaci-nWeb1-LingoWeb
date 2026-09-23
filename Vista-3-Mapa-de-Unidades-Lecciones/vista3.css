@@ -55,13 +55,12 @@ main{
 
 
 .negrita{
-    font-style: oblique;
+    font-style: bold solid black;
     
 }
- .boton{
+ #boton{
        display: flex;
        width: 100%;
-       
        border: 0.1rem solid black;
        background-color: #FFF8E7;
         justify-content: center;      
@@ -69,25 +68,14 @@ main{
 
 
 
-   .boton a{
+   #boton a{
        display: flex;
        flex: 1;
        justify-content: center;
        color: black;
        text-decoration: none;
-    
    }
 
 
-.menu a.active, main a.active{ display: inline-block; padding:0.5rem; background-color: #FFD45A; color:black;}
-main a.inactive{display:inline-block; margin-top:0.5rem;  padding:0.3rem; background-color:#FFD45A; color:black; }
-
-@media  screen and (width<600px) {
-   main{ flex-direction:column;
-    }
-    .l1,.l2,.l3{ padding:2rem;}
-    .menu{display: flex;
-    align-items: center;
-    }
-}
-   
+.menu a.active, main a.active{ padding:0.5rem; background-color: #FFD45A; color:black;}
+main a.inactive{ padding:0.5rem; background-color:#FFD45A; color:black; }
