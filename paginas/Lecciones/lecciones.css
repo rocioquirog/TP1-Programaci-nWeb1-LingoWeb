@@ -1,4 +1,3 @@
-
 :root {
     --crema: #FFF8E7;
     --amarillo: #FFD45A;
@@ -13,70 +12,70 @@
 body.leccion-body {
     font-family: sans-serif;
     color: var(--negro);
-    padding: 15px; 
+    padding: 1rem; 
 }
 
 .header-leccion { 
     display: flex; 
     align-items: center; 
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
 }
 
 .btn-cerrar { 
     text-decoration: none; 
     color: gray; 
-    font-size: 24px; 
-    margin-right: 15px; 
+    font-size: 1.5rem; 
+    margin-right: 1rem; 
 }
 
 .barra-progreso { 
     width: 100%; 
-    height: 15px; 
+    height: 1rem; 
 }
 
 .contenido-leccion h1 { 
-    font-size: 22px; 
-    margin-bottom: 20px; 
+    font-size: 1.5rem; 
+    margin-bottom: 1.5rem; 
 }
 
 .burbuja-texto {
-    border: 2px solid var(--gris);
-    padding: 15px;
-    border-radius: 10px;
+    border: 0.1rem solid var(--gris);
+    padding: 1rem;
+    border-radius: 0.5rem;
     display: inline-block; 
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
 }
 
 .zona-respuesta { 
-    border-bottom: 2px solid var(--gris); 
-    padding-bottom: 20px; 
-    margin-bottom: 30px; 
+    border-bottom: 0.1rem solid var(--gris); 
+    padding-bottom: 1.5rem; 
+    margin-bottom: 2rem; 
 }
 
 .linea-vacia { 
     display: inline-block;
-    width: 50px; 
-    height: 2px; 
+    width: 3rem; 
+    height: 0.1rem; 
     background: #ccc; 
-    margin-right: 10px;
+    margin-right: 0.5rem;
 }
 
 .banco-palabras { 
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
 }
 
 .btn-palabra { 
     background: #ffffff; 
-    border: 2px solid var(--gris); 
-    padding: 10px 15px; 
-    margin: 5px; 
-    border-radius: 8px;
+    border: 0.1rem solid var(--gris); 
+    padding: 0.5rem 1rem; 
+    margin: 0.5rem; 
+    border-radius: 0.5rem;
     cursor: pointer;
 }
 
 .footer-leccion {
-    border-top: 2px solid var(--gris);
-    padding-top: 20px;
+    border-top: 0.1rem solid var(--gris);
+    padding-top: 1.5rem;
     text-align: center;
 }
 
@@ -84,40 +83,40 @@ body.leccion-body {
     background: var(--naranja); 
     color: white; 
     border: none; 
-    padding: 15px; 
-    font-size: 16px;
+    padding: 1rem; 
+    font-size: 1rem;
     font-weight: bold;
     text-decoration: none;
     display: block; 
-    border-radius: 10px;
+    border-radius: 0.5rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
     body.leccion-body { 
-        max-width: 700px; 
-        margin: 20px auto; 
-        border: 2px solid var(--gris);
-        border-radius: 10px;
+        max-width: 44rem; 
+        margin: 1.5rem auto; 
+        border: 0.1rem solid var(--gris);
+        border-radius: 0.5rem;
     }
 
     .btn-primario { 
         display: inline-block; 
         width: auto; 
-        padding: 15px 40px; 
+        padding: 1rem 2.5rem; 
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 64rem) {
     body.leccion-body { 
-        max-width: 800px; 
-        margin: 40px auto; 
+        max-width: 50rem; 
+        margin: 2.5rem auto; 
     }
 
     .contenido-leccion h1 {
-        font-size: 28px; 
+        font-size: 2rem; 
     }
     
     .burbuja-texto {
-        font-size: 18px; 
+        font-size: 1.2rem; 
     }
 }
