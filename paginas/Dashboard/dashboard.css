@@ -28,7 +28,7 @@ main{
     flex:8;
 }
 
-#boton{
+.boton{
      display:flex;
      align-items: center;
      border: 0.1rem solid black;
@@ -36,7 +36,7 @@ main{
 
 }
 
-#boton a{
+.boton a{
 display:flex;
 flex:1 1 auto;
 justify-content:center;
