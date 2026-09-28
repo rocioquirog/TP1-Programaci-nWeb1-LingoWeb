@@ -48,36 +48,49 @@
     align-items: center;
     gap: 0.5rem;
 }
+
 .avatar-pequeño {
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
     background-color: #F47B3A;
     color: white;
-    display:inline-flex;
+    display:flex;
     align-items: center;
     justify-content: center;
     font-size: 1rem;
     font-weight: bold;
-    
+    flex-shrink: 0; 
 }
 .columna-XP{
     color: #F47B3A;
     font-weight: bold;
 
 }
-.columna-ascenso{
-       color:#E94B4B;
-    font-weight: bold; 
+.resalto-ascenso{
+    color: #6ccb2f;
+    font-weight: bold;
+    
 }
-
+.resalto-descenso{
+ color:#E94B4B;
+ font-weight: bold;
+}
+.fila-ascenso{
+    color: #66d025;
+    font-weight: bold;
+    background-color: #DDF4D8;
+}
+.fila-descenso{
+    color: #f84949;
+    font-weight: bold;
+    background-color: #f7d3d3;
+}
 .selector-liga select {
     padding: 0.7rem;
     border: 0.1rem solid #E94B4B;
     border-radius: 0.7rem;
- 
 }
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -85,9 +98,10 @@ table {
 }
 th,
 td {
-    padding: 0.7rem 0.3rem;
+    padding: 0.7rem 0.5rem;
     text-align: center;
     border-bottom: 0.1rem solid #FFD45A;
+    font-size: 1rem;
 }
 th {
     background-color: #F47B3A;
@@ -97,11 +111,10 @@ tbody tr:hover {
     background-color: #FFF8E7;
 }
 .usuario-actual{
-background-color: #fff0b8;
+background-color: #f5df92;
 font-weight: bold;
+color: #6ccb2f;
 }
-
-
 
 @media (min-width: 40rem) {
     .contenido-ranking {
@@ -114,4 +127,5 @@ font-weight: bold;
     td {
         padding: 1rem;
     }
+    
 }
