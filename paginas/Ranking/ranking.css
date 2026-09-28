@@ -94,7 +94,6 @@
 table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.8rem;
 }
 th,
 td {
@@ -121,7 +120,7 @@ color: #6ccb2f;
         width: 80%;
     }
     table {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
     th,
     td {

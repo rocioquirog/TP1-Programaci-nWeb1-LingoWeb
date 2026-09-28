@@ -121,20 +121,5 @@ footer {
 
     .boton {
         width: auto;
-        gap: 1rem;
-    }
-}
-@media (max-width:25rem){
-    .logo-texto{
-        font-size: 2rem;
-    }
-    .logo img{
-        width: 2.5rem;
-    }
-    .menu{
-        gap:0.3rem;
-    }
-    .menu a{
-        padding: 0.4rem 0.6rem;
     }
 }
