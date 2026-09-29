@@ -8,9 +8,7 @@
     <title>Perfil | LingoWeb</title>
 </head>
 <body>
-    
      <header class="barra-navegacion">
-
       <a href="../Dashboard/dashboard.html" class="logo">
         <img src="../../identidad/SINBOLOLINGOWEB.png" alt="imagotipo de LingoWeb">
             <span class="logo-texto">LingoWeb</span>
@@ -30,7 +28,6 @@
         </nav>
      </header>
   
-   
     <main class="contenido-principal">
         <section class="perfil">
             <div class="avatar">
@@ -48,7 +45,6 @@
         </div>
         </section>
 
-        
           <section class="informacion-personal">
             <h2>Información Personal</h2>
             <ul class="lista-informacion">
@@ -62,28 +58,25 @@
             <h2>Cambiar Contraseña</h2>
             <form action="#">
                 <label for="contrasena-actual">Contraseña Actual:</label>
-                <input type="password" id="contrasena-actual" name="contrasena-actual" required>
+                <input type="password" id="contrasena-actual" name="contrasena-actual" autocomplete="current-password" required>
 
                 <label for="nueva-contrasena">Nueva Contraseña:</label>
-                <input type="password" id="nueva-contrasena" name="nueva-contrasena" required>
+                <input type="password" id="nueva-contrasena" name="nueva-contrasena" autocomplete="new-password" required>
 
                 <label for="confirmar-contrasena">Confirmar Nueva Contraseña:</label>
-                <input type="password" id="confirmar-contrasena" name="confirmar-contrasena" required>
-            </form>
-        </section>
+                <input type="password" id="confirmar-contrasena" name="confirmar-contrasena" autocomplete="new-password" required>
 
-      
-         <section>
-            <form action="#" class="acciones">
-            <button type="submit" class="boton boton-principal">
+                <div class="acciones">
+                     <button type="submit" class="boton boton-principal">
                 Guardar cambios
             </button>
 
             <a href="../acceso/login.html" class="boton boton-secundario">
                 Cerrar sesión
             </a>
+                </div>
             </form>
-        </section>    
+        </section>
 
         <section class="idiomas">
             <h2>Idiomas de la interfaz</h2>
@@ -102,9 +95,9 @@
             </form>
                </section>
                
-        <section class="targetas">
+        <section class="tarjetas">
             <h2>Mis Logros</h2> 
-            <article class="targeta-logro">
+            <article class="tarjeta-logro">
                 <h3>Primer paso</h3>
                  <div class="icono-logro">
                   🏆
@@ -112,7 +105,7 @@
                 <p>Completaste tu primera lección.</p>
             </article>
 
-            <article class="targeta-logro">
+            <article class="tarjeta-logro">
                 <h3>Racha de 5 días</h3>
                 <div class="icono-logro">
                         🔥
@@ -120,7 +113,7 @@
                 <p>Aprendiste durante 5 días seguidos.</p>
             </article>
 
-            <article class="targeta-logro">
+            <article class="tarjeta-logro">
                 <h3>350 XP</h3>
                 <div class="icono-logro">
                         ⚡
