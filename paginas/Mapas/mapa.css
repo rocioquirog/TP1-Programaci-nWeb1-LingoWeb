@@ -79,9 +79,19 @@ main{
     
    }
 
-
+main .inactive{all:unset}
 .menu a.active, main a.active{ display: inline-block; padding:0.5rem; background-color: #FFD45A; color:black;}
-main a.inactive{display:inline-block; margin-top:0.5rem;  padding:0.3rem; background-color:#FFD45A; color:black; }
+
+main .inactive{display:inline-block; margin-top:0.5rem;  padding:0.5rem; background-color:#E94B4B; color:black; }
+
+.menu .active{all:unset}
+.menu button.active{display:inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: 0.2s;background-color: #FFD45A;color: #b73413;}
+
 
 @media  screen and (width<600px) {
    main{ flex-direction:column;

@@ -48,6 +48,7 @@ body {
     margin: 0;
 }
 .menu a {
+    display:inline-block;
     color: #000;
     text-decoration: none;
     font-weight: bold;
@@ -62,8 +63,14 @@ body {
 }
 
 .menu a.active {
-background-color: #FFD45A;
+ display:inline-block;
+ background-color: #FFD45A;
 color:  #E94B4B;
+text-decoration: none;
+font-weight: bold;
+padding: 0.5rem 1rem;
+border-radius: 0.5rem;
+transition: 0.2s;
 }
 .boton {
     padding: 0.8rem 1rem;
