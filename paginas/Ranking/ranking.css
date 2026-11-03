@@ -115,6 +115,15 @@ font-weight: bold;
 color: #6ccb2f;
 }
 
+.resumen{
+    display: flex;
+    gap: 16px;
+    font-weight: bold;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 @media (min-width: 40rem) {
     .contenido-ranking {
         width: 80%;

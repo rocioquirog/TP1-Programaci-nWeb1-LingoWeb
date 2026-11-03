@@ -45,9 +45,8 @@ main{
     flex-direction:column;
     flex:1;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     border:0.3rem solid black;
-    gap:5%;
 }
 
 .l1 h2, .l2 h2, .l3 h2{
@@ -78,6 +77,9 @@ main{
        text-decoration: none;
     
    }
+   main .boton{
+    width: 100%;
+}
 
 main .inactive{all:unset}
 .menu a.active, main a.active{ display: inline-block; padding:0.5rem; background-color: #FFD45A; color:black;}
@@ -93,12 +95,35 @@ main .inactive{display:inline-block; margin-top:0.5rem;  padding:0.5rem; backgro
     transition: 0.2s;background-color: #FFD45A;color: #b73413;}
 
 
-@media  screen and (width<600px) {
+.unidad{
+    display: flex;
+    flex-direction: column;
+    flex: 9;
+}
+
+.flecha{
+    position: fixed;
+    bottom: 1rem;
+    width: 6rem;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    background-color: #FFD45A;
+    color: black;
+    border: 0.1rem solid black;
+}
+
+#flecha-izq{ left: 1rem; }
+#flecha-der{ right: 1rem; }
+
+.oculta{ display: none; }
+
+@media  screen and (width<850px) {
    main{ flex-direction:column;
     }
     .l1,.l2,.l3{ padding:2rem;}
     .menu{display: flex;
     align-items: center;
     }
+    
 }
    
