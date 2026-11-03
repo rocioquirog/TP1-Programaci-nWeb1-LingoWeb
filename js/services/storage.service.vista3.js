@@ -57,3 +57,19 @@ function leerOpiniones(curso) {
     }
     return JSON.parse(guardado);
 }
+
+// TP2: Vista 3: Mapa de unidades y detalle del curso
+// guarda en el navegador el resultado de una lección (aciertos, total y XP)
+function guardarResultado(curso, unidad, leccion, resultado) {
+    localStorage.setItem("resultado-" + curso + "-" + unidad + "-" + leccion, JSON.stringify(resultado));
+}
+
+// TP2: Vista 3: Mapa de unidades y detalle del curso
+// lee el resultado guardado de una lección (si no hay ninguno devuelve null)
+function leerResultado(curso, unidad, leccion) {
+    const guardado = localStorage.getItem("resultado-" + curso + "-" + unidad + "-" + leccion);
+    if (guardado === null) {
+        return null;
+    }
+    return JSON.parse(guardado);
+}

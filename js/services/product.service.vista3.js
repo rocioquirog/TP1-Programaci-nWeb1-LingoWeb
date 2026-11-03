@@ -45,8 +45,12 @@ function elegirLeccion(curso, unidad, leccion) {
 }
 
 // TP2: Vista 3: Mapa de unidades y detalle del curso
-// busca el resultado de una lección (si no hay ninguno devuelve undefined)
+// busca el resultado de una lección: primero el que guardó la persona al terminarla y, si no hay, el de demostración
 function obtenerResultado(curso, unidad, leccion) {
+    const guardado = leerResultado(curso, unidad, leccion);
+    if (guardado !== null) {
+        return guardado;
+    }
     return resultadosIniciales.find((resultado) => {
         return resultado.curso === curso && resultado.unidad === unidad && resultado.leccion === leccion;
     });
@@ -144,4 +148,11 @@ function enviarOpinion(curso, calificacion, comentario) {
     opiniones.push(crearOpinion(curso, obtenerUsuarioActivo(), parseInt(calificacion), comentario.trim()));
     guardarOpiniones(curso, opiniones);
     return "";
+}
+
+// TP2: Vista 3: Mapa de unidades y detalle del curso
+// la llama la página de lección cuando la persona termina: guarda el resultado y completa la lección
+function finalizarLeccion(curso, unidad, leccion, aciertos, total, xp) {
+    guardarResultado(curso, unidad, leccion, { aciertos: aciertos, total: total, xp: xp });
+    completarLeccion(curso, unidad, leccion);
 }

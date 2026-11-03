@@ -98,5 +98,13 @@ conectarOpiniones(
 // al cargar la página se dibujan las opiniones ya registradas de este curso
 dibujarOpiniones(obtenerOpiniones(nombreCurso), mensajeSinOpiniones);
 
+// TP2: Vista 2: Dashboard de cursos
+// la experiencia de la barra sale de las lecciones completadas (la misma cuenta que el dashboard)
+dibujarResumen(calcularExperiencia());
+
+// TP2: Vista 2: Dashboard de cursos
+// la racha de la barra sale de las lecciones completadas (la misma cuenta que el dashboard)
+dibujarRacha(textoRacha(calcularRacha()));
+
 cargarUnidadGuardada(clave);
 actualizar();

@@ -49,59 +49,30 @@ padding: 0.6rem 1.2rem;
 }
 
 
-.ingles{
-    
-    width:30%;
-    display:flex;
-   flex-direction: column;
-    padding:1%;
+/* TP2: Vista 2: Dashboard de cursos */
+/* contenedor de las tarjetas: ocupa el mismo 90% que antes ocupaban las tres tarjetas juntas (30% + 30% + 30%) */
+.lista-cursos{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+}
+
+/* TP2: Vista 2: Dashboard de cursos */
+/* tarjeta de un curso: reemplaza las reglas .ingles, .aleman y .chino, que eran iguales */
+.tarjeta-curso{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
     border: 0.1rem solid black;
     justify-content: center;
-    
 }
 
-.ingles h2 {
-    display:flex;
+.tarjeta-curso h2{ display: flex; }
+.tarjeta-curso h3{ padding: 5%; }
 
-
-}
-.ingles h3{ padding: 5%;}
-
-.aleman{
-    width:30%;
-    display:flex;
-   flex-direction: column;
-    padding:1%;
-    border: 0.1rem solid black;
-    justify-content: center;
-    
-}
-
-.aleman h2 {
-    display:flex;
-
-   
-
-}
-.aleman h3{ padding: 5%;}
-
-.chino{
-    width:30%;
-    display:flex;
-   flex-direction: column;
-    padding:1%;
-    border: 0.1rem solid black;
-    justify-content: center;
-    
-}
-
-.chino h2 {
-    display:flex;
- 
-   
-
-}
-.chino h3{ padding: 5%;}
+/* separa la bandera del nombre del curso */
+.tarjeta-curso .fi{ margin-right: 0.5rem; }
 
 
    
@@ -143,22 +114,46 @@ padding: 0.6rem 1.2rem;
    
 }
 
-.menu .active{all:unset}
-.menu button.active{display:inline-block;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    transition: 0.2s;background-color: #FFD45A;color: #b73413;}
 
+
+/* TP2: Vista 2: Dashboard de cursos */
+/* mensaje de bienvenida para cuentas sin actividad */
+.estado-inicial{
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background-color: #FFD45A;
+    border: 0.1rem solid black;
+}
+
+.estado-inicial h2, .estado-inicial p{
+    margin-bottom: 0.5rem;
+}
+
+.estado-inicial a{
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #FFF8E7;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border: 0.1rem solid black;
+}
+
+/* TP2: Vista 2: Dashboard de cursos */
+/* esconde lo que tenga esta clase (el dashboard no la tenía, los mapas sí) */
+.oculta{ display: none; }
 
 @media screen and (width<1015px) {
     body{ height:auto; width:auto; }
     main {flex-direction:column; flex:1; align-self:stretch;}
-    .ingles,.aleman,.chino,.estadistica{width:100%; align-items:center; flex:1;}
+    /* TP2: Vista 2: Dashboard de cursos */
+    /* las tarjetas pasan a apilarse en columna: el contenedor ocupa 3 partes y la tarjeta de estadísticas 1, así las 4 miden lo mismo */
+    .lista-cursos{ width:100%; flex-direction:column; flex:3; }
+    .tarjeta-curso,.estadistica{width:100%; align-items:center; flex:1;}
     .estadistica h2{margin-top:1rem;}
-    .ingles h2, .aleman h2, .chino h2, .estadistica h2,
-    .ingles h3, .aleman h3, .chino h3, .estadistica h3 {
+    .tarjeta-curso h2, .estadistica h2,
+    .tarjeta-curso h3, .estadistica h3 {
         margin: 0;
         
         padding: 0.2rem ;
