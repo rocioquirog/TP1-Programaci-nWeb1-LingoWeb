@@ -8,11 +8,11 @@ height:100vh;
 display:flex;
 flex-direction: column;}
 
+
 header{
     width:100%;
     display:flex;
     flex-direction:row;
-    border:0.3rem solid black;
     flex:1;
     background-color: lightgrey;
 }
@@ -29,7 +29,7 @@ display:flex;
     justify-content:center;
 align-items:center;
 flex:1;
-border: 0.3rem solid black;}
+border: 0.1rem solid black;}
 
 main{
     width:100%;
@@ -46,7 +46,7 @@ main{
     flex:1;
     align-items: center;
     justify-content: space-around;
-    border:0.3rem solid black;
+    border:0.1rem solid black;
 }
 
 .l1 h2, .l2 h2, .l3 h2{
@@ -116,6 +116,126 @@ main .inactive{display:inline-block; margin-top:0.5rem;  padding:0.5rem; backgro
 #flecha-der{ right: 1rem; }
 
 .oculta{ display: none; }
+
+.resumen{
+    display: flex;
+    gap: 16px;
+    font-weight: bold;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* TP2: Vista 3: Mapa de unidades y detalle del curso */
+/* mensaje que aparece abajo cuando tocan una lección bloqueada */
+.mensaje{
+    position: fixed;
+    bottom: 1rem;
+    left: 8rem;
+    right: 8rem;
+    padding: 0.5rem 1rem;
+    background-color: #FFF8E7;
+    color: black;
+    border: 0.1rem solid black;
+    text-align: center;
+}
+
+/* TP2: Vista 3: Mapa de unidades y detalle del curso */
+/* descripción corta de cada lección, con alto fijo para que las cajas de estado queden alineadas */
+.descripcion{
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* TP2: Vista 3: Mapa de unidades y detalle del curso */
+/* descripción corta de cada unidad, debajo del título */
+/* los bordes de los costados tienen el mismo grosor que los del título y las lecciones; arriba y abajo ya están los de ellos */
+.descripcion-unidad{
+    text-align: center;
+    padding: 0.5rem;
+    border-left: 0.1rem solid black;
+    border-right: 0.1rem solid black;
+}
+
+/* TP2: Vista 3: Mapa de unidades y detalle del curso */
+/* botones de una lección completada ("Ver resultado" y "Repetir"): mismo tamaño que "Iniciar" y "No Disponible" */
+/* al botón hay que ponerle la tipografía y sacarle el borde que trae el navegador, así queda igual que el enlace */
+main button.accion-completada, main a.active.accion-completada{
+    display: inline-block;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    background-color: #FFD45A;
+    color: black;
+    border-style: none;
+    text-align: center;
+}
+
+main a.active.accion-completada{
+    margin-left: 0.5rem;
+}
+
+main a.active{
+    text-decoration: none;
+}
+
+/* TP2: Vista 3: Mapa de unidades y detalle del curso */
+/* botón "Opiniones del curso" de la barra, con el mismo tamaño de letra que los enlaces del menú */
+.menu .boton-opiniones{
+    display: inline-block;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    background-color: #FFD45A;
+    color: black;
+    border-style: none;
+}
+
+/* TP2: Vista 3: Mapa de unidades y detalle del curso */
+/* panel de opiniones: ocupa el lugar de las unidades (flex 9, igual que ellas) y se desplaza con la página */
+.panel-opiniones{
+    flex: 9;
+    padding: 1rem;
+    background-color: #FFF8E7;
+    color: black;
+    border: 0.1rem solid black;
+}
+
+.panel-opiniones h2, .panel-opiniones h3, .panel-opiniones p, .panel-opiniones li, .panel-opiniones select, .panel-opiniones textarea{
+    margin-bottom: 0.5rem;
+}
+
+.panel-opiniones label, .panel-opiniones select, .panel-opiniones textarea{
+    display: block;
+}
+
+.panel-opiniones textarea{
+    width: 100%;
+    height: 6rem;
+}
+
+.panel-opiniones button{
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    background-color: #FFD45A;
+    color: black;
+    border-style: none;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.panel-opiniones ul{
+    padding-left: 1.5rem;
+}
 
 @media  screen and (width<850px) {
    main{ flex-direction:column;

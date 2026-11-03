@@ -19,29 +19,43 @@
         <nav>
             <ul class="menu">
                 <li><a href="../Dashboard/dashboard.html">Volver a Cursos</a></li>
+                <!-- TP2: Vista 3: Mapa de unidades y detalle del curso -->
+                <!-- botón que abre el panel de opiniones del curso -->
+                <li><button class="boton-opiniones" id="abrir-opiniones" type="button">Opiniones del curso</button></li>
             </ul>
         </nav>
+
+        <ul class="resumen">
+            <li>🔥 5 días</li>
+            <li>⚡ 350 XP</li>
+        </ul>
     </header>
 
+    <!-- TP2: Vista 3: Mapa de unidades y detalle del curso -->
+    <!-- cada unidad y cada lección tiene su descripción y su estado (completada, en curso o bloqueada) -->
     <section class="unidad" id="unidad1">
         <h1> Unidad 1: Introducción y Saludos</h1>
+        <p class="descripcion-unidad">Aprendé a saludar y a presentarte.</p>
         <main>
             <section class="l1">
                 <h2>🟡Lección 1</h2>
                 <h2 class="negrita">Frases Básicas</h2>
+                <p class="descripcion">Saludos y expresiones de todos los días.</p>
                 <h2 class="boton">Estado: En curso</h2>
                 <h2 ><a href="../lecciones/leccion-aleman.html" class="active">Iniciar</a></h2>
             </section>
             <section class="l2">
                 <h2>🔒Lección 2</h2>
                 <h2 class="negrita">Presentaciones</h2>
-                <h2 class="boton">Estado: Bloqueado</h2>
+                <p class="descripcion">Decí tu nombre, tu edad y de dónde sos.</p>
+                <h2 class="boton">Estado: Bloqueada</h2>
                 <h2> <button class="inactive" type="button">No Disponible</button> </h2>
             </section>
             <section class="l3">
                 <h2>🔒Lección 3</h2>
                 <h2 class="negrita">Vocabulario de Familia</h2>
-                <h2 class="boton">Estado: Bloqueado</h2>
+                <p class="descripcion">Nombres de los miembros de la familia.</p>
+                <h2 class="boton">Estado: Bloqueada</h2>
                 <h2> <button class="inactive" type="button">No Disponible</button> </h2>
             </section>
         </main>
@@ -49,23 +63,27 @@
 
     <section class="unidad oculta" id="unidad2">
         <h1> Unidad 2: Números y Colores</h1>
+        <p class="descripcion-unidad">Contá del 1 al 10 y nombrá los colores.</p>
         <main>
             <section class="l1">
                 <h2>🔒Lección 1</h2>
                 <h2 class="negrita">Los Números</h2>
-                <h2 class="boton">Estado: Bloqueado</h2>
+                <p class="descripcion">Los números del 1 al 10.</p>
+                <h2 class="boton">Estado: Bloqueada</h2>
                 <h2> <button class="inactive" type="button">No Disponible</button> </h2>
             </section>
             <section class="l2">
                 <h2>🔒Lección 2</h2>
                 <h2 class="negrita">Los Colores</h2>
-                <h2 class="boton">Estado: Bloqueado</h2>
+                <p class="descripcion">Los colores más comunes.</p>
+                <h2 class="boton">Estado: Bloqueada</h2>
                 <h2> <button class="inactive" type="button">No Disponible</button> </h2>
             </section>
             <section class="l3">
                 <h2>🔒Lección 3</h2>
                 <h2 class="negrita">Días de la Semana</h2>
-                <h2 class="boton">Estado: Bloqueado</h2>
+                <p class="descripcion">Los días de la semana en orden.</p>
+                <h2 class="boton">Estado: Bloqueada</h2>
                 <h2> <button class="inactive" type="button">No Disponible</button> </h2>
             </section>
         </main>
@@ -73,23 +91,27 @@
 
     <section class="unidad oculta" id="unidad3">
         <h1> Unidad 3: Comida y Bebidas</h1>
+        <p class="descripcion-unidad">Vocabulario para hablar de lo que comés y tomás.</p>
         <main>
             <section class="l1">
                 <h2>🔒Lección 1</h2>
                 <h2 class="negrita">Frutas y Verduras</h2>
-                <h2 class="boton">Estado: Bloqueado</h2>
+                <p class="descripcion">Nombres de frutas y verduras comunes.</p>
+                <h2 class="boton">Estado: Bloqueada</h2>
                 <h2> <button class="inactive" type="button">No Disponible</button> </h2>
             </section>
             <section class="l2">
                 <h2>🔒Lección 2</h2>
                 <h2 class="negrita">Bebidas</h2>
-                <h2 class="boton">Estado: Bloqueado</h2>
+                <p class="descripcion">Cómo pedir algo para tomar.</p>
+                <h2 class="boton">Estado: Bloqueada</h2>
                 <h2> <button class="inactive" type="button">No Disponible</button> </h2>
             </section>
             <section class="l3">
                 <h2>🔒Lección 3</h2>
                 <h2 class="negrita">En el Restaurante</h2>
-                <h2 class="boton">Estado: Bloqueado</h2>
+                <p class="descripcion">Pedir un plato y la cuenta.</p>
+                <h2 class="boton">Estado: Bloqueada</h2>
                 <h2> <button class="inactive" type="button">No Disponible</button> </h2>
             </section>
         </main>
@@ -97,23 +119,27 @@
 
     <section class="unidad oculta" id="unidad4">
         <h1> Unidad 4: Viajes y Lugares</h1>
+        <p class="descripcion-unidad">Frases útiles para viajar y moverte por la ciudad.</p>
         <main>
             <section class="l1">
                 <h2>🔒Lección 1</h2>
                 <h2 class="negrita">En el Aeropuerto</h2>
-                <h2 class="boton">Estado: Bloqueado</h2>
+                <p class="descripcion">Frases para viajar en avión.</p>
+                <h2 class="boton">Estado: Bloqueada</h2>
                 <h2> <button class="inactive" type="button">No Disponible</button> </h2>
             </section>
             <section class="l2">
                 <h2>🔒Lección 2</h2>
                 <h2 class="negrita">En el Hotel</h2>
-                <h2 class="boton">Estado: Bloqueado</h2>
+                <p class="descripcion">Hacer una reserva y pedir ayuda.</p>
+                <h2 class="boton">Estado: Bloqueada</h2>
                 <h2> <button class="inactive" type="button">No Disponible</button> </h2>
             </section>
             <section class="l3">
                 <h2>🔒Lección 3</h2>
                 <h2 class="negrita">Pedir Direcciones</h2>
-                <h2 class="boton">Estado: Bloqueado</h2>
+                <p class="descripcion">Preguntar cómo llegar a un lugar.</p>
+                <h2 class="boton">Estado: Bloqueada</h2>
                 <h2> <button class="inactive" type="button">No Disponible</button> </h2>
             </section>
         </main>
@@ -121,23 +147,27 @@
 
     <section class="unidad oculta" id="unidad5">
         <h1> Unidad 5: Rutina y Hobbies</h1>
+        <p class="descripcion-unidad">Contá cómo es tu día y qué te gusta hacer.</p>
         <main>
             <section class="l1">
                 <h2>🔒Lección 1</h2>
                 <h2 class="negrita">Mi Rutina</h2>
-                <h2 class="boton">Estado: Bloqueado</h2>
+                <p class="descripcion">Contá lo que hacés durante el día.</p>
+                <h2 class="boton">Estado: Bloqueada</h2>
                 <h2> <button class="inactive" type="button">No Disponible</button> </h2>
             </section>
             <section class="l2">
                 <h2>🔒Lección 2</h2>
                 <h2 class="negrita">Pasatiempos</h2>
-                <h2 class="boton">Estado: Bloqueado</h2>
+                <p class="descripcion">Hablá de lo que te gusta hacer.</p>
+                <h2 class="boton">Estado: Bloqueada</h2>
                 <h2> <button class="inactive" type="button">No Disponible</button> </h2>
             </section>
             <section class="l3">
                 <h2>🔒Lección 3</h2>
                 <h2 class="negrita">El Clima</h2>
-                <h2 class="boton">Estado: Bloqueado</h2>
+                <p class="descripcion">Describir el tiempo que hace hoy.</p>
+                <h2 class="boton">Estado: Bloqueada</h2>
                 <h2> <button class="inactive" type="button">No Disponible</button> </h2>
             </section>
         </main>
@@ -146,11 +176,45 @@
     <button class="flecha oculta" id="flecha-izq" type="button">←</button>
     <button class="flecha" id="flecha-der" type="button">→</button>
 
-    <script src="../../js/data/initial-data.js"></script>
-    <script src="../../js/models/product.model.js"></script>
-    <script src="../../js/services/storage.service.js"></script>
-    <script src="../../js/services/product.service.js"></script>
-    <script src="../../js/view/product.view.js"></script>
-    <script src="../../js/main.js"></script>
+    <!-- TP2: Vista 3: Mapa de unidades y detalle del curso -->
+    <!-- mensaje que aparece cuando tocan una lección bloqueada -->
+    <p class="mensaje oculta" id="mensaje-bloqueada"></p>
+
+    <!-- TP2: Vista 3: Mapa de unidades y detalle del curso -->
+    <!-- panel de opiniones: formulario para valorar el curso y lista de opiniones registradas -->
+    <section class="panel-opiniones oculta" id="panel-opiniones">
+        <h2>Opiniones del curso</h2>
+
+        <form id="formulario-opinion">
+            <label for="calificacion">Tu calificación</label>
+            <select id="calificacion">
+                <option value="">Elegí una calificación</option>
+                <option value="1">1 - Muy mala</option>
+                <option value="2">2 - Mala</option>
+                <option value="3">3 - Regular</option>
+                <option value="4">4 - Buena</option>
+                <option value="5">5 - Excelente</option>
+            </select>
+
+            <label for="comentario">Tu comentario</label>
+            <textarea id="comentario" maxlength="300"></textarea>
+
+            <p id="mensaje-opinion"></p>
+
+            <button type="submit">Enviar opinión</button>
+            <button type="button" id="cerrar-opiniones">Volver al mapa</button>
+        </form>
+
+        <h3>Opiniones registradas</h3>
+        <ul id="lista-opiniones"></ul>
+    </section>
+
+
+       <script src="../../js/data/initial-data.vista3.js"></script>
+    <script src="../../js/models/product.model.vista3.js"></script>
+    <script src="../../js/services/storage.service.vista3.js"></script>
+    <script src="../../js/services/product.service.vista3.js"></script>
+    <script src="../../js/view/product.view.vista3.js"></script>
+    <script src="../../js/main.vista3.js"></script>
     </body>
 </html>
