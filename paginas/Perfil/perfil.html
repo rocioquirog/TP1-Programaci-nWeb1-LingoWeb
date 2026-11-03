@@ -29,6 +29,7 @@
      </header>
   
     <main class="contenido-principal">
+        
         <section class="perfil">
             <div class="avatar">
                 FF
@@ -56,7 +57,7 @@
 
         <section class="cambiar-contrasena">
             <h2>Cambiar Contraseña</h2>
-            <form action="#">
+            <form id="formulario-contraseña">
                 <label for="contrasena-actual">Contraseña Actual:</label>
                 <input type="password" id="contrasena-actual" name="contrasena-actual" autocomplete="current-password" required>
 
@@ -67,7 +68,7 @@
                 <input type="password" id="confirmar-contrasena" name="confirmar-contrasena" autocomplete="new-password" required>
 
                 <div class="acciones">
-                     <button type="submit" class="boton boton-principal">
+                     <button type="button" class="boton boton-principal">
                 Guardar cambios
             </button>
 
@@ -80,7 +81,7 @@
 
         <section class="idiomas">
             <h2>Idiomas de la interfaz</h2>
-            <form action="#">
+            <form id="formulario-idioma">
                 <label for="idioma">
                     Idioma principal
                 </label>
