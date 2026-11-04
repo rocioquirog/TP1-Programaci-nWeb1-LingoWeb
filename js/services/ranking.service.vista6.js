@@ -1,12 +1,12 @@
 
 function obtenerUsuarioRanking() {
-    const usuarioActivo = localStorage.getItem("usuarioActivo");
- 
+    const usuarioActivo = obtenerIdentificadorUsuarioActivo();
+
     if (usuarioActivo !== null) {
         return usuarioActivo.toLowerCase();
     }
- 
-    return "facundoferreira";
+
+    return "";
 }
  
 
@@ -37,23 +37,30 @@ function obtenerEstudiantes() {
             xp: estudiante.xp
         };
     });
- 
-    const usuarioActivo = obtenerUsuarioRanking();
- 
+
+    const datosUsuario = obtenerDatosUsuarioActivo();
+
+    if (datosUsuario === null) {
+        return estudiantes;
+    }
+
+    const usuarioActivo = datosUsuario.usuario.toLowerCase();
+
     const estudianteActual = estudiantes.find((estudiante) => {
         return estudiante.usuario.toLowerCase() === usuarioActivo;
     });
- 
+
     if (estudianteActual !== undefined) {
+        estudianteActual.nombre = datosUsuario.nombre;
         estudianteActual.xp = calcularExperiencia();
     } else {
         estudiantes.push({
             usuario: usuarioActivo,
-            nombre: usuarioActivo,
+            nombre: datosUsuario.nombre,
             xp: calcularExperiencia()
         });
     }
- 
+
     return estudiantes;
 }
  

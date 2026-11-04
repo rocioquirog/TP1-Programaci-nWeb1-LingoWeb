@@ -3,17 +3,45 @@ function dibujarPerfil(usuario) {
     const nombre = document.querySelector(".datos-principales h2");
     const correo = document.querySelector(".correo-usuario");
     const descripcion = document.querySelector(".descripcion-usuario");
- 
+    const avatar = document.querySelector(".avatar");
+
+    const nombreCompleto = document.getElementById("perfil-nombre");
+    const nombreUsuario = document.getElementById("perfil-usuario");
+    const email = document.getElementById("perfil-email");
+
     if (nombre !== null) {
         nombre.textContent = usuario.nombre;
     }
- 
+
     if (correo !== null) {
-        correo.textContent = usuario.usuario;
+        correo.textContent = "@" + usuario.usuario;
     }
- 
+
     if (descripcion !== null) {
-        descripcion.textContent = usuario.descripcion;
+        descripcion.textContent = "Miembro de LingoWeb";
+    }
+
+    if (avatar !== null) {
+        avatar.textContent = usuario.nombre
+            .split(" ")
+            .map(function (palabra) {
+                return palabra.charAt(0);
+            })
+            .slice(0, 2)
+            .join("")
+            .toUpperCase();
+    }
+
+    if (nombreCompleto !== null) {
+        nombreCompleto.textContent = usuario.nombre;
+    }
+
+    if (nombreUsuario !== null) {
+        nombreUsuario.textContent = "@" + usuario.usuario;
+    }
+
+    if (email !== null) {
+        email.textContent = usuario.email;
     }
 }
  

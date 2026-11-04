@@ -1,7 +1,13 @@
 
 console.log("javaScript de la vista 5 cargado correctamente");
 
-dibujarPerfil(usuarioInicial);
+const usuarioActivo = obtenerDatosUsuarioActivo();
+
+if (usuarioActivo) {
+    dibujarPerfil(usuarioActivo);
+} else {
+    window.location.href = "../acceso/login.html";
+}
 dibujarIdioma(obtenerIdioma());
  
 conectarFormularioIdioma();
