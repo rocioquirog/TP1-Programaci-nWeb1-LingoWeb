@@ -33,9 +33,9 @@
             </ul>
         </nav>
         <ul class="resumen">
-            <li id="resumen-racha">🔥 5 días</li>
-            <li id="resumen-xp">⚡ 350 XP</li>
-        </ul>
+    <li>🔥 <span id="perfil-nav-racha">...</span></li>
+    <li>⚡ <span id="perfil-nav-xp">...</span> XP</li>
+</ul>
     </header>
 
     <main class="contenido-principal">
@@ -118,26 +118,14 @@
         <section class="tarjetas">
             <h2>Mis Logros</h2>
             <article class="tarjeta-logro">
-                <h3>Primer paso</h3>
-                <div class="icono-logro">
-                    🏆
-                </div>
-                <p>Completaste tu primera lección.</p>
+                <h3>Racha de <span id="perfil-logro-racha">...</span></h3>
+                <div class="icono-logro">🔥</div>
+                <p>Aprendiste de forma seguida.</p>
             </article>
 
             <article class="tarjeta-logro">
-                <h3>Racha de 5 días</h3>
-                <div class="icono-logro">
-                    🔥
-                </div>
-                <p>Aprendiste durante 5 días seguidos.</p>
-            </article>
-
-            <article class="tarjeta-logro">
-                <h3>350 XP</h3>
-                <div class="icono-logro">
-                    ⚡
-                </div>
+                <h3><span id="perfil-logro-xp">...</span> XP</h3>
+                <div class="icono-logro">⚡</div>
                 <p>Experiencia acumulada.</p>
             </article>
         </section>
@@ -148,15 +136,14 @@
 
     </footer>
 
-    <!-- Datos y lógica para calcular XP y racha -->
+    
     <script src="../../js/data/initial-data.vista3.js"></script>
     <script src="../../js/models/product.model.vista3.js"></script>
     <script src="../../js/services/storage.service.vista3.js"></script>
     <script src="../../js/services/product.service.vista3.js"></script>
     <script src="../../js/data/initial-data.vista2.js"></script>
     <script src="../../js/services/product.service.vista2.js"></script>
-    <script src="../../js/view/product.view.vista2.js"></script>
-    <!-- TP2: Vista 5: Perfil de usuario y ajustes -->
+    
     <script src="../../js/models/user.model.vista5.js"></script>
     <script src="../../js/data/initial-data.vista5.js"></script>
     <script src="../../js/models/usuario.model.js"></script>
