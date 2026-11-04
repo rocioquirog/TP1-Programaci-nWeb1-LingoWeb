@@ -1,8 +1,4 @@
-// TP2: Vista 2: Dashboard de cursos
-// lógica del dashboard: cuántas unidades completó la persona y qué porcentaje de avance le toca
-// usa lo del mapa (product.service.vista3.js), que se carga antes en el HTML
 
-// una unidad está completa cuando están completas sus 3 lecciones
 function contarUnidadesCompletadas(curso) {
     const completadas = obtenerLeccionesCompletadas(curso);
     let unidadesCompletas = 0;
@@ -14,12 +10,10 @@ function contarUnidadesCompletadas(curso) {
     return unidadesCompletas;
 }
 
-// porcentaje de avance: cada unidad completa suma lo mismo (con 5 unidades, 20% cada una) y con todas da 100%
 function calcularProgreso(curso) {
     return contarUnidadesCompletadas(curso) * 100 / obtenerTotalUnidades();
 }
 
-// "Empezar" si no completó ninguna lección, "Repasar" si completó todas las unidades y "Continuar" en el resto
 function obtenerTextoBoton(curso) {
     if (obtenerLeccionesCompletadas(curso) === 0) {
         return textoBotonEmpezar;
@@ -30,14 +24,11 @@ function obtenerTextoBoton(curso) {
     return textoBotonContinuar;
 }
 
-// TP2: Vista 2: Dashboard de cursos
-// experiencia total: suma los XP de todas las lecciones completadas de todos los cursos
 function calcularExperiencia() {
     let total = 0;
     cursosDashboard.forEach((curso) => {
         for (let unidad = 1; unidad <= obtenerTotalUnidades(); unidad++) {
             for (let leccion = 1; leccion <= leccionesPorUnidad; leccion++) {
-                // solo cuentan las lecciones que están completadas
                 if (obtenerEstadoLeccion(curso.clave, unidad, leccion) === "completada") {
                     const resultado = obtenerResultado(curso.clave, unidad, leccion);
                     if (resultado !== undefined) {
@@ -49,8 +40,7 @@ function calcularExperiencia() {
     });
     return total;
 }
-// TP2: Vista 2: Dashboard de cursos
-// una cuenta no tiene actividad si todavía no completó ninguna lección en ningún curso
+
 function cuentaSinActividad() {
     let sinActividad = true;
     cursosDashboard.forEach((curso) => {
@@ -61,10 +51,6 @@ function cuentaSinActividad() {
     return sinActividad;
 }
 
-// TP2: Vista 2: Dashboard de cursos
-// racha de días (sin fechas): suma 1 por cada lección nueva que se completa
-// la cuenta de demostración arranca en rachaInicial y descuenta las lecciones con las que empieza; las demás cuentas arrancan en 0
-// si la cuenta no tiene actividad la racha es 0
 function calcularRacha() {
     if (cuentaSinActividad()) {
         return 0;
@@ -91,8 +77,6 @@ function calcularRacha() {
     return rachaBase + leccionesNuevas;
 }
 
-// TP2: Vista 2: Dashboard de cursos
-// escribe la racha con "día" o "días" según corresponda
 function textoRacha(racha) {
     if (racha === 1) {
         return racha + " día";
@@ -100,9 +84,6 @@ function textoRacha(racha) {
     return racha + " días";
 }
 
-// TP2: Vista 2: Dashboard de cursos
-// XP ganados desde que empezó la cuenta (sin fechas no se puede saber cuánto fue "hoy")
-// la cuenta de demostración descuenta los XP con los que empieza; las demás cuentas empiezan en 0
 function calcularExperienciaGanada() {
     let inicial = 0;
     if (obtenerUsuarioActivo() === usuarioDemostracion) {
@@ -117,8 +98,6 @@ function calcularExperienciaGanada() {
     return ganada;
 }
 
-// TP2: Vista 2: Dashboard de cursos
-// arma las líneas de la tarjeta de estadísticas: liga, racha y meta diaria
 function obtenerLineasEstadisticas() {
     const ganada = calcularExperienciaGanada();
     let lineaMeta = textoMetaCumplida;

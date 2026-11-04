@@ -1,7 +1,4 @@
-// acá está la lógica: en qué unidad estamos y cómo pasar a la siguiente o a la anterior
-// usa lo de initial-data.js, product.model.js y storage.service.js (se cargan antes en el HTML)
 
-// armo la lista de unidades con los datos de initial-data.js
 const unidades = [];
 unidadesIniciales.forEach((dato) => {
     unidades.push(crearUnidad(dato.numero, dato.nombre));
@@ -17,7 +14,7 @@ function obtenerUnidadActual() {
     return unidadActual;
 }
 
-// si había una unidad guardada, arranca en esa
+
 function cargarUnidadGuardada(clave) {
     const guardada = leerUnidadActual(clave);
     if (guardada !== null && guardada >= 1 && guardada <= unidades.length) {
@@ -38,14 +35,12 @@ function irAAnterior(clave) {
         guardarUnidadActual(clave, unidadActual);
     }
 }
-// TP2: Vista 3: Mapa de unidades y detalle del curso
-// arma la lección elegida y la guarda
+
 function elegirLeccion(curso, unidad, leccion) {
     guardarLeccionElegida(crearLeccionElegida(curso, unidad, leccion));
 }
 
-// TP2: Vista 3: Mapa de unidades y detalle del curso
-// busca el resultado de una lección: primero el que guardó la cuenta al terminarla y, si no hay, el de demostración (solo para la cuenta de demostración)
+
 function obtenerResultado(curso, unidad, leccion) {
     const guardado = leerResultado(curso, unidad, leccion);
     if (guardado !== null) {
@@ -59,8 +54,6 @@ function obtenerResultado(curso, unidad, leccion) {
     });
 }
 
-// TP2: Vista 3: Mapa de unidades y detalle del curso
-// cuántas lecciones completó la cuenta activa en un curso (si no hay nada guardado, la cuenta de demostración usa el dato inicial y las demás empiezan en 0)
 function obtenerLeccionesCompletadas(curso) {
     const guardado = leerProgreso(curso);
     if (guardado !== null) {
@@ -76,14 +69,10 @@ function obtenerLeccionesCompletadas(curso) {
     return inicial.completadas;
 }
 
-// TP2: Vista 3: Mapa de unidades y detalle del curso
-// número de una lección contando todas las del curso (unidad 1 lección 1 es la 1, unidad 2 lección 1 es la 4)
 function numeroDeLeccion(unidad, leccion) {
     return (unidad - 1) * leccionesPorUnidad + leccion;
 }
 
-// TP2: Vista 3: Mapa de unidades y detalle del curso
-// devuelve el estado de una lección: "completada", "en curso" o "bloqueada"
 function obtenerEstadoLeccion(curso, unidad, leccion) {
     const completadas = obtenerLeccionesCompletadas(curso);
     const numero = numeroDeLeccion(unidad, leccion);
@@ -96,8 +85,6 @@ function obtenerEstadoLeccion(curso, unidad, leccion) {
     return "bloqueada";
 }
 
-// TP2: Vista 3: Mapa de unidades y detalle del curso
-// marca una lección como completada; solo avanza si era la que estaba en curso
 function completarLeccion(curso, unidad, leccion) {
     const completadas = obtenerLeccionesCompletadas(curso);
     if (numeroDeLeccion(unidad, leccion) === completadas + 1) {
@@ -105,8 +92,6 @@ function completarLeccion(curso, unidad, leccion) {
     }
 }
 
-// TP2: Vista 3: Mapa de unidades y detalle del curso
-// página de lección que corresponde a un curso
 function obtenerPaginaLeccion(curso) {
     const dato = paginasLeccion.find((item) => item.curso === curso);
     if (dato === undefined) {
@@ -115,14 +100,10 @@ function obtenerPaginaLeccion(curso) {
     return dato.pagina;
 }
 
-// TP2: Vista 3: Mapa de unidades y detalle del curso
-// quién es la persona que está usando la app (por ahora es de demostración)
 function obtenerUsuarioActivo() {
     return usuarioDemostracion;
 }
 
-// TP2: Vista 3: Mapa de unidades y detalle del curso
-// opiniones de un curso: las guardadas y, si no hay, las de ejemplo
 function obtenerOpiniones(curso) {
     const guardadas = leerOpiniones(curso);
     if (guardadas !== null) {
@@ -131,8 +112,6 @@ function obtenerOpiniones(curso) {
     return opinionesIniciales.filter((opinion) => opinion.curso === curso);
 }
 
-// TP2: Vista 3: Mapa de unidades y detalle del curso
-// revisa la opinión: devuelve el mensaje de qué falta, o "" si está todo bien
 function validarOpinion(calificacion, comentario) {
     if (calificacion === "") {
         return mensajeOpinionSinCalificacion;
@@ -143,8 +122,6 @@ function validarOpinion(calificacion, comentario) {
     return "";
 }
 
-// TP2: Vista 3: Mapa de unidades y detalle del curso
-// valida y guarda una opinión nueva; devuelve el mensaje de error, o "" si se guardó
 function enviarOpinion(curso, calificacion, comentario) {
     const error = validarOpinion(calificacion, comentario);
     if (error !== "") {
@@ -156,15 +133,11 @@ function enviarOpinion(curso, calificacion, comentario) {
     return "";
 }
 
-// TP2: Vista 3: Mapa de unidades y detalle del curso
-// la llama la página de lección cuando la persona termina: guarda el resultado y completa la lección
 function finalizarLeccion(curso, unidad, leccion, aciertos, total, xp) {
     guardarResultado(curso, unidad, leccion, { aciertos: aciertos, total: total, xp: xp });
     completarLeccion(curso, unidad, leccion);
 }
 
-// TP2: Vista 3: Mapa de unidades y detalle del curso
-// quién es la persona que está usando la app: la que inició sesión; si no hay nadie, la cuenta de demostración
 function obtenerUsuarioActivo() {
     const activo = leerUsuarioActivo();
     if (activo === null) {

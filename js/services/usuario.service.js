@@ -6,7 +6,6 @@ const CLAVE_USUARIO_ACTIVO = "usuarioActivo";
 function obtenerUsuarios() {
     const datosGuardados = localStorage.getItem(CLAVE_USUARIOS);
 
-    // Si todavía no hay usuarios guardados, crea una cuenta de prueba.
     if (datosGuardados === null) {
         const usuarioPrueba = crearUsuarioModelo({
             nombre: "Usuario Prueba",
@@ -22,7 +21,6 @@ function obtenerUsuarios() {
 
     const usuariosGuardados = JSON.parse(datosGuardados);
 
-    // Completa los datos que puedan faltar en usuarios anteriores.
     const usuarios = usuariosGuardados.map(function (usuario) {
         return crearUsuarioModelo(usuario);
     });

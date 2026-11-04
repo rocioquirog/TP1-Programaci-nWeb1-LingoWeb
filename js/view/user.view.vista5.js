@@ -78,7 +78,6 @@ function conectarFormularioContrasena() {
         return;
     }
 
-    // Actualiza visualmente los requisitos mientras se escribe.
     if (campoNueva !== null) {
         campoNueva.addEventListener("input", function () {
             const requisitos = validarRequisitosContrasena(campoNueva.value);

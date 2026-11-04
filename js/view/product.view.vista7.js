@@ -1,5 +1,4 @@
-// TP2: Vista 7: Rachas y Tienda
-// dibuja el panel de racha: una línea por cada dato (las arma obtenerDatosRacha en el service)
+
 function dibujarDatosRacha(lineas) {
     const panel = document.getElementById("panel-racha");
     panel.textContent = "";
@@ -11,14 +10,10 @@ function dibujarDatosRacha(lineas) {
     });
 }
 
-// TP2: Vista 7: Rachas y Tienda
-// escribe el texto del saldo arriba de la tienda
 function dibujarSaldo(texto) {
     document.getElementById("texto-saldo").textContent = texto;
 }
 
-// TP2: Vista 7: Rachas y Tienda
-// llena un selector con sus opciones (se llama una sola vez, al abrir la página)
 function dibujarOpcionesFiltro(idSelector, opciones) {
     const selector = document.getElementById(idSelector);
     selector.textContent = "";
@@ -31,8 +26,7 @@ function dibujarOpcionesFiltro(idSelector, opciones) {
     });
 }
 
-// TP2: Vista 7: Rachas y Tienda
-// lee qué eligió la persona en los dos selectores
+
 function leerFiltrosTienda() {
     return {
         categoria: document.getElementById("filtro-categoria").value,
@@ -40,16 +34,12 @@ function leerFiltrosTienda() {
     };
 }
 
-// TP2: Vista 7: Rachas y Tienda
-// cuando cambia cualquiera de los dos selectores se ejecuta la función que recibe
+
 function conectarFiltrosTienda(alCambiar) {
     document.getElementById("filtro-categoria").addEventListener("change", alCambiar);
     document.getElementById("filtro-mostrar").addEventListener("change", alCambiar);
 }
 
-// TP2: Vista 7: Rachas y Tienda
-// escribe el mensaje de resultado (canje hecho, ya canjeado o falta XP) y lo borra solo pasado el tiempo que recibe
-// guardo el temporizador para cancelarlo si llega otro mensaje antes de que se borre el anterior
 let temporizadorMensajeTienda;
 
 function mostrarMensajeTienda(texto, duracion) {
@@ -62,9 +52,7 @@ function mostrarMensajeTienda(texto, duracion) {
     }, duracion);
 }
 
-// TP2: Vista 7: Rachas y Tienda
-// dibuja una tarjeta por cada elemento; si la lista está vacía muestra el mensaje que le toca
-// canjes es la lista de ids ya canjeados y alCanjear es la función que se ejecuta al tocar el botón
+
 function dibujarTienda(elementos, canjes, textoVacio, alCanjear) {
     const contenedor = document.getElementById("lista-tienda");
     contenedor.textContent = "";
@@ -92,7 +80,6 @@ function dibujarTienda(elementos, canjes, textoVacio, alCanjear) {
         const categoria = document.createElement("p");
         categoria.textContent = "Categoría: " + elemento.categoria;
 
-        // el botón dice "Canjeado" si ya lo canjeó, pero se puede tocar igual y avisa que ya lo tiene
         const boton = document.createElement("button");
         boton.setAttribute("type", "button");
         boton.classList.add("boton");

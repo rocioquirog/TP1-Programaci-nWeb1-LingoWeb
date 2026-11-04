@@ -1,9 +1,6 @@
-// TP2: Vista 4: Lección
-// 1. Leemos qué botón apretó el usuario en el mapa
+
 const leccionElegida = leerLeccionElegida();
 
-// Ruta para el botón de "Volver atrás" 
-// Detectamos en qué archivo estamos para saber a qué mapa volver
 const rutaActual = window.location.pathname;
 let urlMapa = "../Mapas/mapa-ingles.html";
 if (rutaActual.includes("aleman")) urlMapa = "../Mapas/mapa-aleman.html";
@@ -13,29 +10,29 @@ if (leccionElegida === null) {
     alert("Error: No se seleccionó ninguna lección. Volviendo al mapa.");
     window.location.href = urlMapa;
 } else {
-    // 2. Iniciamos la lógica
+
     const datosValidos = iniciarLogicaLeccion(leccionElegida);
 
     if (!datosValidos) {
         alert("Los ejercicios para esta lección aún no están cargados.");
         window.location.href = urlMapa;
     } else {
-        // 3. Pintamos el primer ejercicio
+        
         dibujarEjercicio(obtenerEjercicioActual());
         actualizarBarraProgreso(0);
         actualizarVidasVisuales(vidasActuales);
 
-        // 4. Delegación de eventos (Mover palabras de arriba a abajo)
+        
         document.addEventListener("click", function (e) {
             if (e.target.classList.contains("btn-palabra")) {
                 const palabra = e.target.textContent;
 
-                // Si la palabra está en el banco, la mueve a la zona de respuesta
+                
                 if (e.target.parentElement.classList.contains("banco-palabras")) {
                     zonaRespuesta.appendChild(e.target);
                     agregarPalabra(palabra);
                 }
-                // Si la palabra está en la zona de respuesta, la devuelve al banco
+                
                 else if (e.target.parentElement.classList.contains("zona-respuesta")) {
                     bancoPalabras.appendChild(e.target);
                     quitarPalabra(palabra);
@@ -43,7 +40,7 @@ if (leccionElegida === null) {
             }
         });
 
-        // 5. Botón de comprobar
+       
         botonComprobar.addEventListener("click", function (e) {
             e.preventDefault();
 
@@ -60,18 +57,30 @@ if (leccionElegida === null) {
                     const quedanEjercicios = avanzarEjercicio();
 
                     if (quedanEjercicios) {
-                        // Actualiza la barra y dibuja el siguiente ejercicio.
+                        
                         const progreso = (indiceEjercicioActual / leccionActualData.ejercicios.length) * 100;
 
                         actualizarBarraProgreso(progreso);
                         dibujarEjercicio(obtenerEjercicioActual());
 
                     } else {
-                        // Terminó la lección entera.
+                        
                         actualizarBarraProgreso(100);
 
+                        
+                        const estadoPrevio = obtenerEstadoLeccion(leccionElegida.curso, leccionElegida.unidad, leccionElegida.leccion);
+                        const esRepaso = (estadoPrevio === "completada");
+
+                        
                         const res = calcularResultadosLeccion();
 
+                        
+                        if (esRepaso) {
+                            const resultadoAnterior = obtenerResultado(leccionElegida.curso, leccionElegida.unidad, leccionElegida.leccion);
+                            if (resultadoAnterior !== undefined && resultadoAnterior !== null) {
+                                res.xp = resultadoAnterior.xp; // Restauramos su XP original más alta
+                            }
+                        }
                         finalizarLeccion(
                             leccionElegida.curso,
                             leccionElegida.unidad,
@@ -81,7 +90,7 @@ if (leccionElegida === null) {
                             res.xp
                         );
 
-                        mostrarVictoria(res, urlMapa);
+                        mostrarVictoria(res, urlMapa, esRepaso);
                     }
                 });
 

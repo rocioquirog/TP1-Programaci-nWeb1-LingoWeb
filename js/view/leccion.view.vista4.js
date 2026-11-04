@@ -10,7 +10,6 @@ function dibujarEjercicio(ejercicio) {
     zonaRespuesta.innerHTML = ""; 
     bancoPalabras.innerHTML = ""; 
     
-    // Dibuja los botones mezclados
     const palabrasMezcladas = [...ejercicio.banco].sort(() => Math.random() - 0.5);
     
     palabrasMezcladas.forEach(palabra => {
@@ -21,8 +20,6 @@ function dibujarEjercicio(ejercicio) {
     });
 }
 
-// Crea una ventana personalizada para mostrar mensajes.
-// Crea una ventana personalizada para mostrar mensajes.
 function mostrarModalLeccion(tituloTexto, mensajeTexto, textoBoton, accion, esExito = false) {
     const fondo = document.createElement("div");
     fondo.classList.add("fondo-modal");
@@ -105,7 +102,6 @@ function mostrarModalLeccion(tituloTexto, mensajeTexto, textoBoton, accion, esEx
     boton.focus();
 }
 
-// Muestra si la respuesta fue correcta o incorrecta.
 function mostrarFeedback(esCorrecta, accionContinuar) {
     if (esCorrecta) {
         mostrarModalLeccion(
@@ -125,7 +121,6 @@ function mostrarFeedback(esCorrecta, accionContinuar) {
 }
 
 
-// Muestra el mensaje cuando se pierden todas las vidas.
 function mostrarDerrota(urlMapa) {
     mostrarModalLeccion(
         "¡No te rindas!",
@@ -138,11 +133,15 @@ function mostrarDerrota(urlMapa) {
 }
 
 
-// Muestra el mensaje al completar la lección.
-function mostrarVictoria(resultados, urlMapa) {
+function mostrarVictoria(resultados, urlMapa, esRepaso) {
+    const titulo = esRepaso ? "¡Repaso completado!" : "¡Lección completada!";
+    const mensaje = esRepaso 
+        ? "¡Excelente trabajo! (Ya habías ganado los XP de esta lección)." 
+        : "¡Excelente trabajo! Ganaste " + resultados.xp + " XP.";
+
     mostrarModalLeccion(
-        "¡Lección completada!",
-        "¡Excelente trabajo! Ganaste " + resultados.xp + " XP.",
+        titulo,
+        mensaje,
         "Volver al mapa",
         function () {
             window.location.href = urlMapa;
@@ -159,7 +158,6 @@ function actualizarBarraProgreso(porcentaje) {
 function actualizarVidasVisuales(vidasRestantes) {
     const corazones = document.querySelectorAll(".corazon");
     corazones.forEach((corazon, index) => {
-        // Si el índice del corazón es mayor o igual a las vidas que quedan, se apaga
         if (index >= vidasRestantes) {
             corazon.classList.add("perdido");
         } else {
