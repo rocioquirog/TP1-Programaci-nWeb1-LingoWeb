@@ -1,4 +1,3 @@
-
 function dibujarPerfil(usuario) {
     const nombre = document.querySelector(".datos-principales h2");
     const correo = document.querySelector(".correo-usuario");
@@ -44,56 +43,106 @@ function dibujarPerfil(usuario) {
         email.textContent = usuario.email;
     }
 }
- 
+
 function dibujarIdioma(idioma) {
     const selector = document.getElementById("idioma");
- 
+
     if (selector !== null) {
         selector.value = idioma;
     }
 }
- 
+
 
 function conectarFormularioIdioma() {
     const formulario = document.getElementById("form-idioma");
     const selector = document.getElementById("idioma");
- 
+
     if (formulario === null || selector === null) {
         return;
     }
- 
-    formulario.addEventListener("submit", function(evento) {
+
+    formulario.addEventListener("submit", function (evento) {
         evento.preventDefault();
- 
+
         guardarIdioma(selector.value);
- 
+
         alert("El idioma se guardó correctamente.");
     });
 }
- 
+
 function conectarFormularioContrasena() {
     const formulario = document.getElementById("form-contrasena");
- 
+    const campoNueva = document.getElementById("nueva-contrasena");
+
     if (formulario === null) {
         return;
     }
- 
-    formulario.addEventListener("submit", function(evento) {
+
+    // Actualiza visualmente los requisitos mientras se escribe.
+    if (campoNueva !== null) {
+        campoNueva.addEventListener("input", function () {
+            const requisitos = validarRequisitosContrasena(campoNueva.value);
+
+            const elementos = {
+                longitud: document.getElementById("perfil-longitud"),
+                mayuscula: document.getElementById("perfil-mayuscula"),
+                minuscula: document.getElementById("perfil-minuscula"),
+                numero: document.getElementById("perfil-numero")
+            };
+
+            Object.keys(requisitos).forEach(function (requisito) {
+                if (elementos[requisito]) {
+                    elementos[requisito].classList.toggle(
+                        "cumplido",
+                        requisitos[requisito]
+                    );
+                }
+            });
+        });
+    }
+
+    formulario.addEventListener("submit", function (evento) {
         evento.preventDefault();
- 
+
         const actual = document.getElementById("contrasena-actual").value;
         const nueva = document.getElementById("nueva-contrasena").value;
         const confirmar = document.getElementById("confirmar-contrasena").value;
- 
+
         const mensaje = validarCambioContrasena(actual, nueva, confirmar);
- 
+
         if (mensaje !== "") {
             alert(mensaje);
             return;
         }
- 
-        alert("Los datos son correctos. En esta demostración no se modifica una contraseña real.");
- 
+
+        const actualizado = actualizarUsuarioActivo({
+            contrasena: nueva
+        });
+
+        if (!actualizado) {
+            alert("No se pudo actualizar la contraseña. Intentá nuevamente.");
+            return;
+        }
+
+        alert("¡Tu contraseña se modificó correctamente!");
+
+        mostrarMensaje(
+            formulario,
+            "¡Tu contraseña se modificó correctamente!",
+            "exito"
+        );
+
         formulario.reset();
+
+        const elementos = [
+            "perfil-longitud",
+            "perfil-mayuscula",
+            "perfil-minuscula",
+            "perfil-numero"
+        ];
+
+        elementos.forEach(function (id) {
+            document.getElementById(id).classList.remove("cumplido");
+        });
     });
 }

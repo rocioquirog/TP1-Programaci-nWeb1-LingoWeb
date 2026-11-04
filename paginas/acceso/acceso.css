@@ -44,7 +44,7 @@ input {
     padding: 1rem;
     border: 0.1rem solid #e94b4b;
     border-radius: 1rem;
-    
+
 }
 
 button {
@@ -64,19 +64,19 @@ button:hover {
     transform: translateY(-0.1rem);
 }
 
-a{
+a {
     text-align: center;
     color: #000000;
     margin-top: 2%;
 }
 
-.codigo{
+.codigo {
     display: flex;
     justify-content: center;
     gap: 1rem;
 }
 
-h2{
+h2 {
     width: 70%;
     text-align: center;
     margin-bottom: 5%;
@@ -135,6 +135,28 @@ h2{
     outline-offset: 0.2rem;
 }
 
+/* Mensajes generales de formularios */
+.mensaje-formulario {
+    width: 40%;
+    padding: 0.8rem 1rem;
+    margin: 1rem auto;
+    border-radius: 0.7rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.mensaje-formulario.error {
+    background-color: #FDE2E2;
+    color: #B42318;
+    border: 0.1rem solid #E94B4B;
+}
+
+.mensaje-formulario.exito {
+    background-color: #E2F3E5;
+    color: #218838;
+    border: 0.1rem solid #218838;
+}
+
 /*CELULAR*/
 @media (max-width: 47rem) {
     header img {
@@ -145,21 +167,26 @@ h2{
         width: 70%;
     }
 
-    a{
+    a {
         margin-bottom: 2%;
+    }
+
+    .mensaje-formulario {
+        width: 70%;
     }
 }
 
 /*TABLET*/
 @media (min-width: 48em) and (max-width: 59em) {
-    header img{
+    header img {
         width: 50%;
     }
 
-    form{
+    form {
         width: 60%;
     }
 }
+
 /* Mensajes de error debajo de los campos */
 .mensaje-error-campo {
     color: #E94B4B;

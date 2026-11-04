@@ -1,9 +1,8 @@
-// Nombres de las claves utilizadas en localStorage.
+
 const CLAVE_USUARIOS = "usuarios";
+
 const CLAVE_USUARIO_ACTIVO = "usuarioActivo";
 
-
-// Obtiene todos los usuarios registrados.
 function obtenerUsuarios() {
     const datosGuardados = localStorage.getItem(CLAVE_USUARIOS);
 
@@ -31,14 +30,10 @@ function obtenerUsuarios() {
     return usuarios;
 }
 
-
-// Guarda la lista completa de usuarios.
 function guardarUsuarios(usuarios) {
     localStorage.setItem(CLAVE_USUARIOS, JSON.stringify(usuarios));
 }
 
-
-// Busca un usuario por su nombre de usuario.
 function buscarUsuarioPorNombre(nombreUsuario) {
     const usuarios = obtenerUsuarios();
 
@@ -48,7 +43,7 @@ function buscarUsuarioPorNombre(nombreUsuario) {
 }
 
 
-// Busca un usuario por su correo electrónico.
+
 function buscarUsuarioPorEmail(email) {
     const usuarios = obtenerUsuarios();
 
@@ -58,7 +53,7 @@ function buscarUsuarioPorEmail(email) {
 }
 
 
-// Busca una cuenta usando el nombre de usuario o el correo.
+
 function buscarUsuarioPorCredencial(credencial) {
     const usuarios = obtenerUsuarios();
 
@@ -69,7 +64,7 @@ function buscarUsuarioPorCredencial(credencial) {
 }
 
 
-// Registra una cuenta nueva.
+
 function crearUsuario(datos) {
     const usuarios = obtenerUsuarios();
 
@@ -99,7 +94,7 @@ function crearUsuario(datos) {
 }
 
 
-// Actualiza los datos de un usuario existente.
+
 function actualizarUsuario(nombreUsuario, cambios) {
     const usuarios = obtenerUsuarios();
 
@@ -123,19 +118,19 @@ function actualizarUsuario(nombreUsuario, cambios) {
 }
 
 
-// Guarda qué usuario inició sesión.
+
 function establecerUsuarioActivo(nombreUsuario) {
     localStorage.setItem(CLAVE_USUARIO_ACTIVO, nombreUsuario);
 }
 
 
-// Obtiene el nombre de usuario de la sesión actual.
+
 function obtenerIdentificadorUsuarioActivo() {
     return localStorage.getItem(CLAVE_USUARIO_ACTIVO);
 }
 
 
-// Obtiene todos los datos del usuario que inició sesión.
+
 function obtenerDatosUsuarioActivo() {
     const nombreUsuario = obtenerIdentificadorUsuarioActivo();
 
@@ -147,7 +142,7 @@ function obtenerDatosUsuarioActivo() {
 }
 
 
-// Actualiza los datos de la cuenta que inició sesión.
+
 function actualizarUsuarioActivo(cambios) {
     const usuarioActivo = obtenerDatosUsuarioActivo();
 
@@ -159,7 +154,7 @@ function actualizarUsuarioActivo(cambios) {
 }
 
 
-// Cierra la sesión actual.
+
 function cerrarSesion() {
     localStorage.removeItem(CLAVE_USUARIO_ACTIVO);
 }

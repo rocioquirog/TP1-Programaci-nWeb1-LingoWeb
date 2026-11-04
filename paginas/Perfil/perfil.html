@@ -67,7 +67,7 @@
 
         <section class="cambiar-contrasena">
             <h2>Cambiar Contraseña</h2>
-            <form id="form-contraseña">
+            <form id="form-contrasena">
                 <label for="contrasena-actual">Contraseña Actual:</label>
                 <input type="password" id="contrasena-actual" name="contrasena-actual" autocomplete="current-password"
                     required>
@@ -75,6 +75,12 @@
                 <label for="nueva-contrasena">Nueva Contraseña:</label>
                 <input type="password" id="nueva-contrasena" name="nueva-contrasena" autocomplete="new-password"
                     required>
+                <ul class="requisitos-clave">
+                    <li id="perfil-longitud">Al menos 8 caracteres</li>
+                    <li id="perfil-mayuscula">Una letra mayúscula</li>
+                    <li id="perfil-minuscula">Una letra minúscula</li>
+                    <li id="perfil-numero">Un número</li>
+                </ul>
 
                 <label for="confirmar-contrasena">Confirmar Nueva Contraseña:</label>
                 <input type="password" id="confirmar-contrasena" name="confirmar-contrasena" autocomplete="new-password"
@@ -155,11 +161,10 @@
     <script src="../../js/data/initial-data.vista5.js"></script>
     <script src="../../js/models/usuario.model.js"></script>
     <script src="../../js/services/usuario.service.js"></script>
+    <script src="../../js/services/contrasena.util.js"></script>
     <script src="../../js/services/user.service.vista5.js"></script>
     <script src="../../js/view/user.view.vista5.js"></script>
     <script src="../../js/main.vista5.js"></script>
-
-
 
 </body>
 

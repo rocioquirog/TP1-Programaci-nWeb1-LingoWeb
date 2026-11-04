@@ -117,6 +117,37 @@
     padding: 0;
 }
 
+.requisitos-clave {
+    padding-left: 1.5rem;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.requisitos-clave li.cumplido {
+    color: green;
+}
+
+.mensaje-formulario {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin: 1rem 0;
+    border-radius: 0.7rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.mensaje-formulario.error {
+    background-color: #FDE2E2;
+    color: #B42318;
+    border: 0.1rem solid #E94B4B;
+}
+
+.mensaje-formulario.exito {
+    background-color: #E2F3E5;
+    color: #218838;
+    border: 0.1rem solid #218838;
+}
+
 @media (min-width: 40rem) {
     .contenido-principal {
         width: 80%;

@@ -12,6 +12,7 @@ function mostrarMensaje(formulario, texto, tipo) {
 }
 
 function mostrarConfirmacionRegistro() {
+
     const fondo = document.createElement("div");
     fondo.classList.add("fondo-modal");
 
@@ -97,17 +98,8 @@ function limpiarErrores(formulario) {
     });
 }
 
-function validarContrasena(contrasena) {
-    return {
-        longitud: contrasena.length >= 8,
-        mayuscula: /[A-Z]/.test(contrasena),
-        minuscula: /[a-z]/.test(contrasena),
-        numero: /[0-9]/.test(contrasena)
-    };
-}
-
 function actualizarRequisitosContrasena(contrasena, prefijo) {
-    const requisitos = validarContrasena(contrasena);
+    const requisitos = validarRequisitosContrasena(contrasena);
 
     const elementos = {
         longitud: document.getElementById(prefijo + "longitud"),
