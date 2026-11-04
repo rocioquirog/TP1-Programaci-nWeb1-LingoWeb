@@ -62,25 +62,33 @@ function cuentaSinActividad() {
 }
 
 // TP2: Vista 2: Dashboard de cursos
-// racha de días (sin fechas): arranca en rachaInicial y suma 1 por cada lección nueva que se completa
+// racha de días (sin fechas): suma 1 por cada lección nueva que se completa
+// la cuenta de demostración arranca en rachaInicial y descuenta las lecciones con las que empieza; las demás cuentas arrancan en 0
 // si la cuenta no tiene actividad la racha es 0
 function calcularRacha() {
     if (cuentaSinActividad()) {
         return 0;
     }
+    const esDemostracion = obtenerUsuarioActivo() === usuarioDemostracion;
     let leccionesNuevas = 0;
     cursosDashboard.forEach((curso) => {
-        const inicial = progresoInicial.find((dato) => dato.curso === curso.clave);
         let base = 0;
-        if (inicial !== undefined) {
-            base = inicial.completadas;
+        if (esDemostracion) {
+            const inicial = progresoInicial.find((dato) => dato.curso === curso.clave);
+            if (inicial !== undefined) {
+                base = inicial.completadas;
+            }
         }
         leccionesNuevas = leccionesNuevas + obtenerLeccionesCompletadas(curso.clave) - base;
     });
     if (leccionesNuevas < 0) {
         leccionesNuevas = 0;
     }
-    return rachaInicial + leccionesNuevas;
+    let rachaBase = 0;
+    if (esDemostracion) {
+        rachaBase = rachaInicial;
+    }
+    return rachaBase + leccionesNuevas;
 }
 
 // TP2: Vista 2: Dashboard de cursos
@@ -93,12 +101,15 @@ function textoRacha(racha) {
 }
 
 // TP2: Vista 2: Dashboard de cursos
-// XP ganados desde que empezó la demostración (sin fechas no se puede saber cuánto fue "hoy")
+// XP ganados desde que empezó la cuenta (sin fechas no se puede saber cuánto fue "hoy")
+// la cuenta de demostración descuenta los XP con los que empieza; las demás cuentas empiezan en 0
 function calcularExperienciaGanada() {
     let inicial = 0;
-    resultadosIniciales.forEach((resultado) => {
-        inicial = inicial + resultado.xp;
-    });
+    if (obtenerUsuarioActivo() === usuarioDemostracion) {
+        resultadosIniciales.forEach((resultado) => {
+            inicial = inicial + resultado.xp;
+        });
+    }
     const ganada = calcularExperiencia() - inicial;
     if (ganada < 0) {
         return 0;

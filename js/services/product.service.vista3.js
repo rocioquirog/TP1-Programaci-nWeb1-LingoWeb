@@ -45,11 +45,14 @@ function elegirLeccion(curso, unidad, leccion) {
 }
 
 // TP2: Vista 3: Mapa de unidades y detalle del curso
-// busca el resultado de una lección: primero el que guardó la persona al terminarla y, si no hay, el de demostración
+// busca el resultado de una lección: primero el que guardó la cuenta al terminarla y, si no hay, el de demostración (solo para la cuenta de demostración)
 function obtenerResultado(curso, unidad, leccion) {
     const guardado = leerResultado(curso, unidad, leccion);
     if (guardado !== null) {
         return guardado;
+    }
+    if (obtenerUsuarioActivo() !== usuarioDemostracion) {
+        return undefined;
     }
     return resultadosIniciales.find((resultado) => {
         return resultado.curso === curso && resultado.unidad === unidad && resultado.leccion === leccion;
@@ -57,11 +60,14 @@ function obtenerResultado(curso, unidad, leccion) {
 }
 
 // TP2: Vista 3: Mapa de unidades y detalle del curso
-// cuántas lecciones completó el usuario en un curso (si no hay nada guardado usa el dato inicial)
+// cuántas lecciones completó la cuenta activa en un curso (si no hay nada guardado, la cuenta de demostración usa el dato inicial y las demás empiezan en 0)
 function obtenerLeccionesCompletadas(curso) {
     const guardado = leerProgreso(curso);
     if (guardado !== null) {
         return guardado;
+    }
+    if (obtenerUsuarioActivo() !== usuarioDemostracion) {
+        return 0;
     }
     const inicial = progresoInicial.find((dato) => dato.curso === curso);
     if (inicial === undefined) {
@@ -155,4 +161,14 @@ function enviarOpinion(curso, calificacion, comentario) {
 function finalizarLeccion(curso, unidad, leccion, aciertos, total, xp) {
     guardarResultado(curso, unidad, leccion, { aciertos: aciertos, total: total, xp: xp });
     completarLeccion(curso, unidad, leccion);
+}
+
+// TP2: Vista 3: Mapa de unidades y detalle del curso
+// quién es la persona que está usando la app: la que inició sesión; si no hay nadie, la cuenta de demostración
+function obtenerUsuarioActivo() {
+    const activo = leerUsuarioActivo();
+    if (activo === null) {
+        return usuarioDemostracion;
+    }
+    return activo;
 }

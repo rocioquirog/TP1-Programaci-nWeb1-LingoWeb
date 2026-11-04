@@ -27,15 +27,15 @@ function leerLeccionElegida() {
 }
 
 // TP2: Vista 3: Mapa de unidades y detalle del curso
-// guarda en el navegador cuántas lecciones completó el usuario en un curso
+// guarda en el navegador cuántas lecciones completó la cuenta activa en un curso
 function guardarProgreso(curso, completadas) {
-    localStorage.setItem("progreso-" + curso, JSON.stringify(completadas));
+    localStorage.setItem("progreso-" + obtenerUsuarioActivo() + "-" + curso, JSON.stringify(completadas));
 }
 
 // TP2: Vista 3: Mapa de unidades y detalle del curso
-// lee cuántas lecciones completó en un curso (si no hay nada guardado devuelve null)
+// lee cuántas lecciones completó la cuenta activa en un curso (si no hay nada guardado devuelve null)
 function leerProgreso(curso) {
-    const guardado = localStorage.getItem("progreso-" + curso);
+    const guardado = localStorage.getItem("progreso-" + obtenerUsuarioActivo() + "-" + curso);
     if (guardado === null) {
         return null;
     }
@@ -59,17 +59,23 @@ function leerOpiniones(curso) {
 }
 
 // TP2: Vista 3: Mapa de unidades y detalle del curso
-// guarda en el navegador el resultado de una lección (aciertos, total y XP)
+// guarda en el navegador el resultado de una lección de la cuenta activa (aciertos, total y XP)
 function guardarResultado(curso, unidad, leccion, resultado) {
-    localStorage.setItem("resultado-" + curso + "-" + unidad + "-" + leccion, JSON.stringify(resultado));
+    localStorage.setItem("resultado-" + obtenerUsuarioActivo() + "-" + curso + "-" + unidad + "-" + leccion, JSON.stringify(resultado));
 }
 
 // TP2: Vista 3: Mapa de unidades y detalle del curso
-// lee el resultado guardado de una lección (si no hay ninguno devuelve null)
+// lee el resultado guardado de una lección de la cuenta activa (si no hay ninguno devuelve null)
 function leerResultado(curso, unidad, leccion) {
-    const guardado = localStorage.getItem("resultado-" + curso + "-" + unidad + "-" + leccion);
+    const guardado = localStorage.getItem("resultado-" + obtenerUsuarioActivo() + "-" + curso + "-" + unidad + "-" + leccion);
     if (guardado === null) {
         return null;
     }
     return JSON.parse(guardado);
+}
+
+// TP2: Vista 3: Mapa de unidades y detalle del curso
+// lee el nombre de la persona que inició sesión (el login lo guarda como texto simple; si no hay nadie devuelve null)
+function leerUsuarioActivo() {
+    return localStorage.getItem("usuarioActivo");
 }
