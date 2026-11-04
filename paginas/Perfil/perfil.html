@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,15 @@
     <link rel="stylesheet" href="../../barra-de-navegación-css/general.css">
     <title>Perfil | LingoWeb</title>
 </head>
-<body>
-<header class="barra-navegacion">
 
-      <a href="../Dashboard/dashboard.html" class="logo">
-        <img src="../../identidad/SINBOLOLINGOWEB.png" alt="imagotipo de LingoWeb">
+<body>
+    <header class="barra-navegacion">
+
+        <a href="../Dashboard/dashboard.html" class="logo">
+            <img src="../../identidad/SINBOLOLINGOWEB.png" alt="imagotipo de LingoWeb">
             <span class="logo-texto">LingoWeb</span>
         </a>
-        <nav >
+        <nav>
             <ul class="menu">
                 <li>
                     <a href="../Dashboard/dashboard.html"> Cursos</a>
@@ -25,33 +27,36 @@
                 <li>
                     <a href="../Ranking/ranking.html">Ranking</a>
                 </li>
+                <li>
+                    <a href="../Rachas/rachas.html">Rachas/Tienda</a>
+                </li>
             </ul>
         </nav>
-         <ul class="resumen">
-            <li>🔥 5 días</li>
-            <li>⚡ 350 XP</li>
+        <ul class="resumen">
+            <li id="resumen-racha">🔥 5 días</li>
+            <li id="resumen-xp">⚡ 350 XP</li>
         </ul>
-     </header>
-  
+    </header>
+
     <main class="contenido-principal">
-        
+
         <section class="perfil">
             <div class="avatar">
                 FF
             </div>
-        <div class="datos-principales">
+            <div class="datos-principales">
 
-            <h2>Facundo Ferreira</h2>
-            <p class="correo-usuario">
-                @facunduferreira_web
-            </p>
-            <p class="descripcion-usuario">
-                Miembro desde Marzo de 2026
-            </p>
-        </div>
+                <h2>Facundo Ferreira</h2>
+                <p class="correo-usuario">
+                    @facunduferreira_web
+                </p>
+                <p class="descripcion-usuario">
+                    Miembro desde Marzo de 2026
+                </p>
+            </div>
         </section>
 
-          <section class="informacion-personal">
+        <section class="informacion-personal">
             <h2>Información Personal</h2>
             <ul class="lista-informacion">
                 <li><strong>Nombre Completo:</strong> Facundo Ferreira Rodriges</li>
@@ -64,22 +69,25 @@
             <h2>Cambiar Contraseña</h2>
             <form id="form-contraseña">
                 <label for="contrasena-actual">Contraseña Actual:</label>
-                <input type="password" id="contrasena-actual" name="contrasena-actual" autocomplete="current-password" required>
+                <input type="password" id="contrasena-actual" name="contrasena-actual" autocomplete="current-password"
+                    required>
 
                 <label for="nueva-contrasena">Nueva Contraseña:</label>
-                <input type="password" id="nueva-contrasena" name="nueva-contrasena" autocomplete="new-password" required>
+                <input type="password" id="nueva-contrasena" name="nueva-contrasena" autocomplete="new-password"
+                    required>
 
                 <label for="confirmar-contrasena">Confirmar Nueva Contraseña:</label>
-                <input type="password" id="confirmar-contrasena" name="confirmar-contrasena" autocomplete="new-password" required>
+                <input type="password" id="confirmar-contrasena" name="confirmar-contrasena" autocomplete="new-password"
+                    required>
 
                 <div class="acciones">
-                     <button type="submit" class="boton boton-principal">
-                Guardar cambios
-            </button>
+                    <button type="submit" class="boton boton-principal">
+                        Guardar cambios
+                    </button>
 
-            <a href="../acceso/login.html" class="boton boton-secundario">
-                Cerrar sesión
-            </a>
+                    <a href="../acceso/login.html" class="boton boton-secundario">
+                        Cerrar sesión
+                    </a>
                 </div>
             </form>
         </section>
@@ -99,48 +107,58 @@
                     </option>
                 </select>
             </form>
-               </section>
-               
+        </section>
+
         <section class="tarjetas">
-            <h2>Mis Logros</h2> 
+            <h2>Mis Logros</h2>
             <article class="tarjeta-logro">
                 <h3>Primer paso</h3>
-                 <div class="icono-logro">
-                  🏆
-                 </div>
+                <div class="icono-logro">
+                    🏆
+                </div>
                 <p>Completaste tu primera lección.</p>
             </article>
 
             <article class="tarjeta-logro">
                 <h3>Racha de 5 días</h3>
                 <div class="icono-logro">
-                        🔥
-                    </div>
+                    🔥
+                </div>
                 <p>Aprendiste durante 5 días seguidos.</p>
             </article>
 
             <article class="tarjeta-logro">
                 <h3>350 XP</h3>
                 <div class="icono-logro">
-                        ⚡
-                    </div>
-                <p>Experiencia acumulada.</p> 
+                    ⚡
+                </div>
+                <p>Experiencia acumulada.</p>
             </article>
-        </section>     
+        </section>
     </main>
 
     <footer>
-        <p>© 2026 LingoWeb - Plataforma de aprendizaje de idiomas  </p>
+        <p>© 2026 LingoWeb - Plataforma de aprendizaje de idiomas </p>
 
     </footer>
- <!-- TP2: Vista 5: Perfil de usuario y ajustes -->
-<script src="../../js/models/user.model.vista5.js"></script>
-<script src="../../js/data/initial-data.vista5.js"></script>
-<script src="../../js/services/user.service.vista5.js"></script>
-<script src="../../js/view/user.view.vista5.js"></script>
-<script src="../../js/main.vista5.js"></script>
+
+    <!-- Datos y lógica para calcular XP y racha -->
+<script src="../../js/data/initial-data.vista3.js"></script>
+<script src="../../js/models/product.model.vista3.js"></script>
+<script src="../../js/services/storage.service.vista3.js"></script>
+<script src="../../js/services/product.service.vista3.js"></script>
+<script src="../../js/data/initial-data.vista2.js"></script>
+<script src="../../js/services/product.service.vista2.js"></script>
+<script src="../../js/view/product.view.vista2.js"></script>
+    <!-- TP2: Vista 5: Perfil de usuario y ajustes -->
+    <script src="../../js/models/user.model.vista5.js"></script>
+    <script src="../../js/data/initial-data.vista5.js"></script>
+    <script src="../../js/services/user.service.vista5.js"></script>
+    <script src="../../js/view/user.view.vista5.js"></script>
+    <script src="../../js/main.vista5.js"></script>
 
 
 
 </body>
+
 </html>

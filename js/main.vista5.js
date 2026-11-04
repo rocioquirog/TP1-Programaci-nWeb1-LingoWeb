@@ -6,3 +6,6 @@ dibujarIdioma(obtenerIdioma());
  
 conectarFormularioIdioma();
 conectarFormularioContrasena();
+
+dibujarResumen(calcularExperiencia());
+dibujarRacha(textoRacha(calcularRacha()));

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,16 @@
     <link rel="stylesheet" href="ranking.css">
     <link rel="stylesheet" href="../../barra-de-navegación-css/general.css">
 </head>
+
 <body>
 
     <header class="barra-navegacion">
-    <a href="../Dashboard/dashboard.html" class="logo">
-               <img src="../../identidad/SINBOLOLINGOWEB.png" alt="imagotipo de LingoWeb">
-                <span class="logo-texto">LingoWeb</span>
+        <a href="../Dashboard/dashboard.html" class="logo">
+            <img src="../../identidad/SINBOLOLINGOWEB.png" alt="imagotipo de LingoWeb">
+            <span class="logo-texto">LingoWeb</span>
         </a>
-        <nav >
-             <ul class="menu">
+        <nav>
+            <ul class="menu">
                 <li>
                     <a href="../Dashboard/dashboard.html"> Cursos</a>
                 </li>
@@ -25,17 +27,20 @@
                 <li>
                     <button class="active" type="button"> Ranking</button>
                 </li>
+                <li>
+                    <a href="../Rachas/rachas.html">Rachas/Tienda</a>
+                </li>
             </ul>
         </nav>
-         <ul class="resumen">
-            <li>🔥 5 días</li>
-            <li>⚡ 350 XP</li>
+        <ul class="resumen">
+            <li id="resumen-racha">🔥 5 días</li>
+            <li id="resumen-xp">⚡ 350 XP</li>
         </ul>
     </header>
-    
-    
-    <main class="contenido-ranking"> 
-        <section class="encabezado-ranking"> 
+
+
+    <main class="contenido-ranking">
+        <section class="encabezado-ranking">
             <div class="trofeo">
                 🏆
             </div>
@@ -43,23 +48,23 @@
             <p id="nombre-liga">Liga de Bronce</p>
         </section>
 
-        <section class="selector-liga"> 
+        <section class="selector-liga">
             <form id="formulario-liga">
-            <label for="liga">Seleccionar Liga:</label>
-            <select id="liga" name="liga">
-                <option value="bronce">Liga de Bronce</option>
-                <option value="plata">Liga de Plata</option>
-                <option value="oro">Liga de Oro</option>
-           </select>
-         </form>
-   </section>
-     
+                <label for="liga">Seleccionar Liga:</label>
+                <select id="liga" name="liga">
+                    <option value="bronce">Liga de Bronce</option>
+                    <option value="plata">Liga de Plata</option>
+                    <option value="oro">Liga de Oro</option>
+                </select>
+            </form>
+        </section>
+
         <section class="mensaje-ranking">
             <h3>¡Seguí aprendiendo!</h3>
             <p>Los 5 primeros ascienden a la Liga de Plata esta semana.</p>
         </section>
 
-         <section class="tabla-ranking">
+        <section class="tabla-ranking">
             <table>
                 <thead>
                     <tr>
@@ -68,35 +73,37 @@
                         <th>XP semanal</th>
                     </tr>
                 </thead>
-                
+
                 <tbody>
-                  
+
                 </tbody>
             </table>
-         </section>
-         
-    </main>
-             <footer>
-     <p>© 2026 LingoWeb - Plataforma de aprendizaje de idiomas</p>
-             </footer>
+        </section>
 
-             <!-- TP2: Vista 3: Datos y lógica del mapa -->
-<script src="../../js/data/initial-data.vista3.js"></script>
-<script src="../../js/models/product.model.vista3.js"></script>
-<script src="../../js/services/storage.service.vista3.js"></script>
-<script src="../../js/services/product.service.vista3.js"></script>
- 
-<!-- TP2: Vista 2: Cálculo de experiencia y racha -->
-<script src="../../js/data/initial-data.vista2.js"></script>
-<script src="../../js/services/product.service.vista2.js"></script>
-<script src="../../js/view/product.view.vista2.js"></script>
- 
-<!-- TP2: Vista 6: Ranking -->
-<script src="../../js/models/ranking.model.vista6.js"></script>
-<script src="../../js/data/initial-data.vista6.js"></script>
-<script src="../../js/services/ranking.service.vista6.js"></script>
-<script src="../../js/view/ranking.view.vista6.js"></script>
-<script src="../../js/main.vista6.js"></script>
+    </main>
+    <footer>
+        <p>© 2026 LingoWeb - Plataforma de aprendizaje de idiomas</p>
+    </footer>
+
+
+    <!-- TP2: Vista 3: Datos y lógica del mapa -->
+    <script src="../../js/data/initial-data.vista3.js"></script>
+    <script src="../../js/models/product.model.vista3.js"></script>
+    <script src="../../js/services/storage.service.vista3.js"></script>
+    <script src="../../js/services/product.service.vista3.js"></script>
+
+    <!-- TP2: Vista 2: Cálculo de experiencia y racha -->
+    <script src="../../js/data/initial-data.vista2.js"></script>
+    <script src="../../js/services/product.service.vista2.js"></script>
+    <script src="../../js/view/product.view.vista2.js"></script>
+
+    <!-- TP2: Vista 6: Ranking -->
+    <script src="../../js/models/ranking.model.vista6.js"></script>
+    <script src="../../js/data/initial-data.vista6.js"></script>
+    <script src="../../js/services/ranking.service.vista6.js"></script>
+    <script src="../../js/view/ranking.view.vista6.js"></script>
+    <script src="../../js/main.vista6.js"></script>
 
 </body>
+
 </html>

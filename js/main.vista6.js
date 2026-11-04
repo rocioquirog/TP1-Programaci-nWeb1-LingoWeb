@@ -11,3 +11,6 @@ function actualizarRanking() {
  
 conectarSelectorLiga();
 actualizarRanking();
+
+dibujarResumen(calcularExperiencia());
+dibujarRacha(textoRacha(calcularRacha()));
