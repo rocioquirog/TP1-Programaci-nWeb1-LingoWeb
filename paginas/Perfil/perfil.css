@@ -63,10 +63,16 @@
     border-radius: 0.7rem;
 }
 .idiomas select {
-    width: 100%;
-    padding: 0.7rem;
+    width: auto;
+    max-width: 100%;
+    padding: 0.4rem 1rem;
     border: 0.1rem solid #E94B4B;
     border-radius: 0.7rem;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+.idiomas{
+    overflow:hidden;
 }
 .tarjetas h2,
 .idiomas h2,
@@ -122,7 +128,9 @@
     }
 
     .idiomas select {
-        width: 50%;
+        width: auto;
+        max-width: 15rem;
+
     }
 
     .tarjeta-logro {

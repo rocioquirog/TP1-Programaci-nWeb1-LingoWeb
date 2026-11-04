@@ -1,5 +1,4 @@
-// TP2: Vista 5: Perfil de usuario y ajustes
-// muestra los datos principales de la persona
+
 function dibujarPerfil(usuario) {
     const nombre = document.querySelector(".datos-principales h2");
     const correo = document.querySelector(".correo-usuario");
@@ -18,8 +17,6 @@ function dibujarPerfil(usuario) {
     }
 }
  
-// TP2: Vista 5: Perfil de usuario y ajustes
-// muestra el idioma que tiene guardado la cuenta
 function dibujarIdioma(idioma) {
     const selector = document.getElementById("idioma");
  
@@ -28,8 +25,7 @@ function dibujarIdioma(idioma) {
     }
 }
  
-// TP2: Vista 5: Perfil de usuario y ajustes
-// conecta el formulario para guardar el idioma
+
 function conectarFormularioIdioma() {
     const formulario = document.getElementById("form-idioma");
     const selector = document.getElementById("idioma");
@@ -47,8 +43,6 @@ function conectarFormularioIdioma() {
     });
 }
  
-// TP2: Vista 5: Perfil de usuario y ajustes
-// conecta el formulario para validar el cambio de contraseña
 function conectarFormularioContrasena() {
     const formulario = document.getElementById("form-contrasena");
  
