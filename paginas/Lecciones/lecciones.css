@@ -91,6 +91,23 @@ body.leccion-body {
     border-radius: 0.5rem;
 }
 
+.contenedor-vidas {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+
+.corazon {
+    transition: all 0.3s ease;
+}
+
+.corazon.perdido {
+    filter: grayscale(100%);
+    opacity: 0.3;
+    transform: scale(0.8);
+}
+
 @media (min-width: 48rem) {
     body.leccion-body { 
         max-width: 44rem; 

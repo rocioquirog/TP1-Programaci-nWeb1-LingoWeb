@@ -23,6 +23,7 @@ if (leccionElegida === null) {
         // 3. Pintamos el primer ejercicio
         dibujarEjercicio(obtenerEjercicioActual());
         actualizarBarraProgreso(0);
+        actualizarVidasVisuales(vidasActuales);
 
         // 4. Delegación de eventos (Mover palabras de arriba a abajo)
         document.addEventListener("click", function(e) {
@@ -48,6 +49,7 @@ if (leccionElegida === null) {
             
             const esCorrecta = comprobarRespuesta();
             mostrarFeedback(esCorrecta);
+            actualizarVidasVisuales(vidasActuales);
             
             if (vidasActuales === 0) {
                 mostrarDerrota(urlMapa);

@@ -43,3 +43,15 @@ function actualizarBarraProgreso(porcentaje) {
     const barra = document.querySelector(".barra-progreso");
     if(barra) barra.value = porcentaje;
 }
+
+function actualizarVidasVisuales(vidasRestantes) {
+    const corazones = document.querySelectorAll(".corazon");
+    corazones.forEach((corazon, index) => {
+        // Si el índice del corazón es mayor o igual a las vidas que quedan, se apaga
+        if (index >= vidasRestantes) {
+            corazon.classList.add("perdido");
+        } else {
+            corazon.classList.remove("perdido");
+        }
+    });
+}
