@@ -46,6 +46,41 @@ function mostrarConfirmacionRegistro() {
     boton.focus();
 }
 
+function mostrarConfirmacionRecuperacion() {
+    const fondo = document.createElement("div");
+    fondo.classList.add("fondo-modal");
+
+    const modal = document.createElement("div");
+    modal.classList.add("modal-confirmacion");
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-labelledby", "titulo-confirmacion-recuperacion");
+
+    const titulo = document.createElement("h2");
+    titulo.id = "titulo-confirmacion-recuperacion";
+    titulo.textContent = "¡Contraseña actualizada!";
+
+    const texto = document.createElement("p");
+    texto.textContent = "Tu contraseña se modificó correctamente. Ya podés iniciar sesión con tu nueva contraseña.";
+
+    const boton = document.createElement("button");
+    boton.type = "button";
+    boton.textContent = "Ir al inicio de sesión";
+
+    boton.addEventListener("click", function () {
+        window.location.href = "login.html";
+    });
+
+    modal.appendChild(titulo);
+    modal.appendChild(texto);
+    modal.appendChild(boton);
+    fondo.appendChild(modal);
+
+    document.body.appendChild(fondo);
+
+    boton.focus();
+}
+
 function mostrarError(campo, texto) {
     const mensaje = document.getElementById("error-" + campo);
 
@@ -126,19 +161,6 @@ if (formularioLogin) {
 
         window.location.href = "../Dashboard/dashboard.html";
     });
-}
-
-const resultado = registrarUsuario({
-    nombre: nombre,
-    usuario: usuario,
-    email: email,
-    contrasena: contrasena
-});
-
-if (resultado.ok) {
-    mostrarConfirmacionRegistro();
-} else {
-    mostrarMensaje("error-usuario", resultado.mensaje);
 }
 
 const formularioRegistro = document.getElementById("formulario-registro");
@@ -371,8 +393,7 @@ if (formularioNuevaContrasena) {
 
         localStorage.removeItem("emailRecuperacion");
 
-        alert("¡Tu contraseña fue actualizada correctamente!");
-        window.location.href = "login.html";
+mostrarConfirmacionRecuperacion();
     });
 }
 

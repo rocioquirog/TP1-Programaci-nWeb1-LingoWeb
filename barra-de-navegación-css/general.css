@@ -114,12 +114,16 @@ footer {
     margin-top: 2rem;
 }
 
-.menu button.active{display:inline-block;
+.menu button.active{
+    display:inline-block;
     text-decoration: none;
     font-weight: bold;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    transition: 0.2s;background-color: #FFD45A;color: #b73413;}
+    transition: 0.2s;background-color: #FFD45A;color: #b73413;
+    border: none;
+    outline: none;
+}
 
 .resumen{
     display: flex;
