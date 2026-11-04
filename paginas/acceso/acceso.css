@@ -82,6 +82,59 @@ h2{
     margin-bottom: 5%;
 }
 
+.fondo-modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 1rem;
+}
+
+.modal-confirmacion {
+    background-color: #FFF8E7;
+    color: #333333;
+    width: 100%;
+    max-width: 28rem;
+    padding: 2rem;
+    border-radius: 1.2rem;
+    text-align: center;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
+}
+
+.modal-confirmacion h2 {
+    color: #E94B4B;
+    margin-bottom: 1rem;
+}
+
+.modal-confirmacion p {
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.modal-confirmacion button {
+    background-color: #E94B4B;
+    color: #FFF8E7;
+    border: none;
+    border-radius: 0.6rem;
+    padding: 0.8rem 1.4rem;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.modal-confirmacion button:hover {
+    background-color: #F47B3A;
+}
+
+.modal-confirmacion button:focus-visible {
+    outline: 0.2rem solid #333333;
+    outline-offset: 0.2rem;
+}
+
 /*CELULAR*/
 @media (max-width: 47rem) {
     header img {
@@ -106,4 +159,25 @@ h2{
     form{
         width: 60%;
     }
+}
+/* Mensajes de error debajo de los campos */
+.mensaje-error-campo {
+    color: #E94B4B;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Lista de requisitos de contraseña */
+.requisitos-clave {
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    color: #777777;
+}
+
+/* Requisitos que ya se cumplen */
+.requisitos-clave li.cumplido {
+    color: #218838;
 }

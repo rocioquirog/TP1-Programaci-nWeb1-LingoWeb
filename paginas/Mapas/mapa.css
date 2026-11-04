@@ -9,21 +9,6 @@ display:flex;
 flex-direction: column;}
 
 
-header{
-    width:100%;
-    display:flex;
-    flex-direction:row;
-    flex:1;
-    background-color: lightgrey;
-}
-header h2{ 
-    display:flex;
-    flex:1 1 auto;
-    flex-direction:row;
-    justify-content: center;
-    align-items: center;
-}
-
 h1{width:100%;
 display:flex;
     justify-content:center;
@@ -86,15 +71,6 @@ main .inactive{all:unset}
 
 main .inactive{display:inline-block; margin-top:0.5rem;  padding:0.5rem; background-color:#E94B4B; color:black; }
 
-.menu .active{all:unset}
-.menu button.active{display:inline-block;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    transition: 0.2s;background-color: #FFD45A;color: #b73413;}
-
-
 .unidad{
     display: flex;
     flex-direction: column;
@@ -117,14 +93,6 @@ main .inactive{display:inline-block; margin-top:0.5rem;  padding:0.5rem; backgro
 
 .oculta{ display: none; }
 
-.resumen{
-    display: flex;
-    gap: 16px;
-    font-weight: bold;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
 
 /* TP2: Vista 3: Mapa de unidades y detalle del curso */
 /* mensaje que aparece abajo cuando tocan una lección bloqueada */

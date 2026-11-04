@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-       <meta charset="UTF-8"> 
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title>Ingreso de email recuperación</title>
-        <link rel="stylesheet" href="acceso.css">
-        <link rel="stylesheet" href="../../barra-de-navegación-css/general.css">
-   </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar contraseña</title>
+    <link rel="stylesheet" href="acceso.css">
+    <link rel="stylesheet" href="../../barra-de-navegación-css/general.css">
+</head>
 
-   <body>
+<body>
 
     <header>
-    <img src="https://i.ibb.co/NdL1bw7N/LINGOWEB.png" alt="imagotipo de LingoWeb">
-   </header>
+        <img src="https://i.ibb.co/NdL1bw7N/LINGOWEB.png" alt="imagotipo de LingoWeb">
+    </header>
 
     <section>
-        <h2>Se enviara un codigo al email ingresado para recuperar la contraseña</h2>
-        <form action="codigo-recuperacion.html">
-            <label>Email</label>
-            <input type="text" required>
+        <h2>Se enviará un código al email ingresado para recuperar la contraseña</h2>
+
+        <form id="formulario-recuperacion">
+            <label for="email-recuperacion">Email</label>
+            <input type="email" id="email-recuperacion" name="email" required>
+            <p id="error-email-recuperacion" class="mensaje-error-campo"></p>
+
             <button type="submit"><strong>CONTINUAR</strong></button>
         </form>
+
+        <a href="login.html">Volver al inicio de sesión</a>
     </section>
-   </body>
+
+<script src="../../js/models/usuario.model.js"></script>
+<script src="../../js/services/usuario.service.js"></script>
+<script src="../../js/main.vista1.js"></script>
+</body>
 </html>

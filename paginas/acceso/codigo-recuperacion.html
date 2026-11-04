@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingreso de email recuperación</title>
+    <title>Verificar código</title>
     <link rel="stylesheet" href="acceso.css">
     <link rel="stylesheet" href="../../barra-de-navegación-css/general.css">
 </head>
@@ -16,20 +16,29 @@
     </header>
 
     <section>
-        <h2>Introduzca el codigo de 6 digitos</h2>
-        <form action="recuperacion.html">
+        <h2>Introduzca el código de 6 dígitos</h2>
+
+        <p>Para esta demostración, el código es: <strong>123456</strong></p>
+
+        <form id="formulario-codigo">
             <div class="codigo">
-                <input type="text" maxlength="1" required>
-                <input type="text" maxlength="1" required>
-                <input type="text" maxlength="1" required>
-                <input type="text" maxlength="1" required>
-                <input type="text" maxlength="1" required>
-                <input type="text" maxlength="1" required>
+                <input type="text" id="codigo1" maxlength="1" inputmode="numeric" pattern="[0-9]" required>
+                <input type="text" id="codigo2" maxlength="1" inputmode="numeric" pattern="[0-9]" required>
+                <input type="text" id="codigo3" maxlength="1" inputmode="numeric" pattern="[0-9]" required>
+                <input type="text" id="codigo4" maxlength="1" inputmode="numeric" pattern="[0-9]" required>
+                <input type="text" id="codigo5" maxlength="1" inputmode="numeric" pattern="[0-9]" required>
+                <input type="text" id="codigo6" maxlength="1" inputmode="numeric" pattern="[0-9]" required>
             </div>
+
             <button type="submit"><strong>CONTINUAR</strong></button>
         </form>
-        <a href="codigo-recuperacion.html">¿No recibiste el codigo? Renviar</a>
+
+        <a href="mail-recuperacion.html">Volver a ingresar el correo</a>
     </section>
+
+<script src="../../js/models/usuario.model.js"></script>
+<script src="../../js/services/usuario.service.js"></script>
+<script src="../../js/main.vista1.js"></script>
 </body>
 
 </html>
