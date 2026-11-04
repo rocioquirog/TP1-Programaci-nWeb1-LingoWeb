@@ -1,5 +1,4 @@
-// TP2: Vista 6: Ranking de estudiantes
-// dibuja las filas de la tabla según los XP de cada estudiante
+
 function dibujarRanking(estudiantes) {
     const cuerpoTabla = document.querySelector("table tbody");
  
@@ -10,25 +9,59 @@ function dibujarRanking(estudiantes) {
     cuerpoTabla.textContent = "";
  
     estudiantes.forEach((estudiante, indice) => {
+ 
+        if (indice === cantidadAscenso) {
+ 
+            const zonaAscenso = document.createElement("tr");
+            zonaAscenso.classList.add("fila-ascenso");
+ 
+            const textoAscenso = document.createElement("td");
+            textoAscenso.setAttribute("colspan", "3");
+            textoAscenso.textContent = "⬆ ZONA DE ASCENSO ⬆";
+ 
+            zonaAscenso.appendChild(textoAscenso);
+            cuerpoTabla.appendChild(zonaAscenso);
+ 
+            const zonaDescenso = document.createElement("tr");
+            zonaDescenso.classList.add("fila-descenso");
+ 
+            const textoDescenso = document.createElement("td");
+            textoDescenso.setAttribute("colspan", "3");
+            textoDescenso.textContent = "⬇ ZONA DE DESCENSO ⬇";
+ 
+            zonaDescenso.appendChild(textoDescenso);
+            cuerpoTabla.appendChild(zonaDescenso);
+        }
+ 
         const fila = document.createElement("tr");
         const celdaPuesto = document.createElement("td");
         const celdaEstudiante = document.createElement("td");
         const celdaXP = document.createElement("td");
  
-        celdaPuesto.textContent = indice + 1;
+        if (indice === 0) {
+            celdaPuesto.textContent = "🥇";
+        } else if (indice === 1) {
+            celdaPuesto.textContent = "🥈";
+        } else if (indice === 2) {
+            celdaPuesto.textContent = "🥉";
+        } else {
+            celdaPuesto.textContent = indice + 1;
+        }
  
+      
         const avatar = document.createElement("span");
         avatar.classList.add("avatar-pequeño");
         avatar.textContent = estudiante.nombre.substring(0, 2).toUpperCase();
  
+        
         const nombre = document.createElement("span");
-        nombre.classList.add("usuario");
         nombre.textContent = estudiante.nombre;
  
         celdaEstudiante.classList.add("columna-estudiante");
         celdaEstudiante.appendChild(avatar);
         celdaEstudiante.appendChild(nombre);
  
+        
         celdaXP.classList.add("columna-XP");
         celdaXP.textContent = estudiante.xp + " XP";
  
@@ -36,17 +69,14 @@ function dibujarRanking(estudiantes) {
         fila.appendChild(celdaEstudiante);
         fila.appendChild(celdaXP);
  
-        // destaca la fila de la cuenta activa
         if (estudiante.usuario.toLowerCase() === obtenerUsuarioRanking()) {
             fila.classList.add("usuario-actual");
         }
  
-        // marca los puestos que ascienden
         if (indice < cantidadAscenso) {
             fila.classList.add("fila-ascenso");
         }
  
-        // marca los puestos que descienden
         if (indice >= estudiantes.length - cantidadDescenso) {
             fila.classList.add("fila-descenso");
         }
@@ -55,18 +85,14 @@ function dibujarRanking(estudiantes) {
     });
 }
  
-// TP2: Vista 6: Ranking de estudiantes
-// muestra la liga seleccionada en el encabezado
 function dibujarNombreLiga(liga) {
-    const encabezado = document.querySelector("main h1, main h2");
+    const nombre = document.getElementById("nombre-liga");
  
-    if (encabezado !== null) {
-        encabezado.textContent = "Liga de " + obtenerNombreLiga(liga);
+    if (nombre !== null) {
+        nombre.textContent = "Liga de " + obtenerNombreLiga(liga);
     }
 }
  
-// TP2: Vista 6: Ranking de estudiantes
-// conecta el selector para cambiar y guardar la liga
 function conectarSelectorLiga() {
     const selector = document.getElementById("liga");
  

@@ -1,5 +1,4 @@
-// TP2: Vista 5: Perfil de usuario y ajustes
-// obtiene el identificador de la cuenta activa
+
 function obtenerIdentificadorUsuario() {
     const usuarioActivo = localStorage.getItem("usuarioActivo");
  
@@ -10,20 +9,14 @@ function obtenerIdentificadorUsuario() {
     return usuarioInicial.usuario;
 }
  
-// TP2: Vista 5: Perfil de usuario y ajustes
-// arma la clave para guardar las preferencias de cada cuenta por separado
 function obtenerClaveIdioma() {
     return "idioma-" + obtenerIdentificadorUsuario();
 }
  
-// TP2: Vista 5: Perfil de usuario y ajustes
-// guarda el idioma elegido por la persona
 function guardarIdioma(idioma) {
     localStorage.setItem(obtenerClaveIdioma(), idioma);
 }
  
-// TP2: Vista 5: Perfil de usuario y ajustes
-// recupera el idioma guardado o usa el idioma inicial
 function obtenerIdioma() {
     const idiomaGuardado = localStorage.getItem(obtenerClaveIdioma());
  
@@ -34,8 +27,6 @@ function obtenerIdioma() {
     return idiomaInicial;
 }
  
-// TP2: Vista 5: Perfil de usuario y ajustes
-// comprueba que los campos de contraseña estén completos y coincidan
 function validarCambioContrasena(actual, nueva, confirmar) {
     if (actual === "" || nueva === "" || confirmar === "") {
         return "Completá todos los campos.";
