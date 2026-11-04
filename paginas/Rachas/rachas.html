@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../barra-de-navegación-css/general.css">
+    <link rel="stylesheet" href="rachas.css">
+
+    <title>Rachas y Tienda</title>
+</head>
+<body>
+    <header class="barra-navegacion">
+        <a href="../Dashboard/dashboard.html" class="logo">
+        <img src="../../identidad/SINBOLOLINGOWEB.png" alt="logo-tipo">
+        <span class="logo-texto">LingoWeb</span>
+        </a>
+        <nav>
+            <ul class="menu">
+                <li><a href="../Dashboard/dashboard.html">Cursos</a></li>
+                <li><a href="../Perfil/perfil.html">Perfil</a></li>
+                <li><a href="../Ranking/ranking.html">Ranking</a></li>
+                <li><a href="../Rachas/rachas.html" class="active">Rachas/Tienda</a></li>
+            </ul>
+        </nav>
+
+        <ul class="resumen">
+            <li id="resumen-racha">🔥 5 días</li>
+            <li id="resumen-xp">⚡ 350 XP</li>
+        </ul>
+
+    </header>
+
+   
+    <h1>Rachas y Tienda</h1>
+
+    <main>
+       
+        <section class="columna-racha">
+            <h2>Tu racha</h2>
+            <section id="panel-racha"></section>
+        </section>
+
+       
+        <section class="columna-tienda">
+            <h2>Tienda</h2>
+            <p id="texto-saldo"></p>
+
+            <section class="filtros">
+                <label for="filtro-categoria">Categoría</label>
+                <select id="filtro-categoria"></select>
+
+                <label for="filtro-mostrar">Mostrar</label>
+                <select id="filtro-mostrar"></select>
+            </section>
+
+            <p id="mensaje-tienda"></p>
+
+            <section class="lista-tienda" id="lista-tienda"></section>
+        </section>
+    </main>
+
+    
+    <script src="../../js/data/initial-data.vista3.js"></script>
+    <script src="../../js/models/product.model.vista3.js"></script>
+    <script src="../../js/services/storage.service.vista3.js"></script>
+    <script src="../../js/services/product.service.vista3.js"></script>
+    <script src="../../js/data/initial-data.vista2.js"></script>
+    <script src="../../js/services/product.service.vista2.js"></script>
+    <script src="../../js/view/product.view.vista2.js"></script>
+    <script src="../../js/data/initial-data.vista7.js"></script>
+    <script src="../../js/models/product.model.vista7.js"></script>
+    <script src="../../js/services/storage.service.vista7.js"></script>
+    <script src="../../js/services/product.service.vista7.js"></script>
+    <script src="../../js/view/product.view.vista7.js"></script>
+    <script src="../../js/main.vista7.js"></script>
+</body>
+</html>
