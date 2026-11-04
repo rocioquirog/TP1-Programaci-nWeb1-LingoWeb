@@ -1,11 +1,9 @@
-// TP2: Vista 4: Lección
 let vidasActuales = 3;
 let indiceEjercicioActual = 0;
 let leccionActualData = null;
 let respuestaUsuario = [];
 
 function iniciarLogicaLeccion(datosElegidos) {
-    // Unimos los 3 arrays de idiomas en uno solo para buscar la lección
     const todosLosEjercicios = [...ejerciciosIngles, ...ejerciciosAleman, ...ejerciciosChino];
 
     leccionActualData = todosLosEjercicios.find(l => 
@@ -36,7 +34,6 @@ function quitarPalabra(palabra) {
 
 function comprobarRespuesta() {
     const ejercicio = obtenerEjercicioActual();
-    // Convierte ambos arrays a texto para saber si están en el mismo orden
     const esCorrecta = respuestaUsuario.join(" ") === ejercicio.respuesta.join(" ");
     
     if (!esCorrecta) {
@@ -47,15 +44,20 @@ function comprobarRespuesta() {
 
 function avanzarEjercicio() {
     indiceEjercicioActual++;
-    respuestaUsuario = []; // Vacía la respuesta para el siguiente nivel
-    return indiceEjercicioActual < leccionActualData.ejercicios.length; // True si quedan más ejercicios
+    respuestaUsuario = [];
+    return indiceEjercicioActual < leccionActualData.ejercicios.length; 
 }
 
 function calcularResultadosLeccion() {
     const total = leccionActualData.ejercicios.length;
+    
+    const vidasPerdidas = 3 - vidasActuales;
+    
+    const xpGanada = 20 - (vidasPerdidas * 4);
+    
     return {
-        aciertos: total, // Si terminó la lección sin perder, acertó todos
+        aciertos: total, 
         total: total,
-        xp: total * 10 // Da 10 puntos de experiencia por cada ejercicio
+        xp: xpGanada
     };
 }
